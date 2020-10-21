@@ -53,7 +53,7 @@ def grafico_lives_estilo():
                 type="buttons",
                 direction="right",  # Posição dos botões na página
                 x=0.9,              # Muda a posição dos botões horizontalmente
-                y=1.1,              # Muda a posição dos botões horizontalmente
+                y=1.1,              # Muda a posição dos botões verticalmente
                 showactive=True,    # Mostra qual botão está ativo
                 buttons=list(
                     [
