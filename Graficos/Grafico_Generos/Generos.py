@@ -1,9 +1,6 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-# Dados extraídos do Spotify, Deezer e Soundclound dos top 50 de cada ano.
-# Porcentagem arredondada para cima, para obter o 100%
-
 def grafico_generos():
 
     # Especifica o caminho do computador até a planilha do gráfico
