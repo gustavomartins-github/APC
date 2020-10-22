@@ -8,7 +8,7 @@ def Artistas_Mais_Escutados():
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
     path = "D:\Todos_Os_Gráficos\Artistas_Mais_Escutados\Artistas_Mais_Ouvidos(Gustavo)-Feito.xlsx"
 
-    # Depois um dataframe foi criado com as informações da planilha
+    # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
 
     # As variáveis df1 até df16 armazenam o endereço das linhas e colunas da planilha, de modo que possam ser facilmente acessadas
@@ -89,5 +89,7 @@ def Artistas_Mais_Escutados():
                     ] ) ) ] )    
 
     #Aqui chamamos a variável fig usando a função show() para mostrar o gráfico criado.          
-    fig.show() 
+    fig.show()
+
+# No final do programa, chamamos a função contendo o gráfico. 
 Artistas_Mais_Escutados()
