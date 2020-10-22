@@ -1,8 +1,17 @@
+# Importando as biblitecas a serem usadas no programa
 import pandas as pd
 import plotly.graph_objects as go
+
+# Criando uma função contendo as informações do o gráfico a ser gerado.
 def Artistas_Mais_Escutados():
+
+    # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
     path = "D:\Todos_Os_Gráficos\Artistas_Mais_Escutados\Artistas_Mais_Ouvidos(Gustavo)-Feito.xlsx"
+
+    # Depois um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
+
+    # As variáveis df1 até df16 armazenam o endereço das linhas e colunas da planilha, de modo que possam ser facilmente acessadas
     df1 = df.loc[:, 'Música_1']
     df2 = df.loc[:, 'Música_2']
     df3 = df.loc[:, 'Música_3']
@@ -18,40 +27,67 @@ def Artistas_Mais_Escutados():
     df13 = df.loc[:, 'Posição_1']
     df14 = df.loc[:, 'Posição_2']
     df15 = df.loc[:, 'Posição_3']
-    df16 = df.loc[:, 'Posição_4'] 
-    color1 = ['rgb(106,90,205)','rgb(131,111,255)','rgb(105,89,205)','rgb(72,61,139)','rgb(25,25,112)','rgb(0,0,128)','rgb(0,0,139)','rgb(0,0,205)','rgb(0,0,255)','rgb(100,149,237)']   
-    color2 = ['rgb(199,21,133)','rgb(255,20,147)','rgb(255,105,180)','rgb(219,112,147)','rgb(255,182,193)','rgb(255,192,203)','rgb(240,128,128)','rgb(205,92,92)','rgb(220,20,60)','rgb(128,0,0)',]
-    color3 = ['rgb(139,0,0)','rgb(178,34,34)','rgb(165,42,42)','rgb(250,128,114)','rgb(233,150,122)','rgb(255,160,122)','rgb(255,127,80)','rgb(255,99,71)','rgb(255,0,0)','rgb(255,69,0)',]
-    color4 = ['rgb(255,140,0)','rgb(255,165,0)','rgb(255,215,0)','rgb(255,255,0)','rgb(240,230,140)','rgb(240,248,255)','rgb(248,248,255)','rgb(255,250,250)','rgb(255,245,238)','rgb(255,250,240)',]
-    fig = go.Figure(layout_title_text="Music_View/Rank_Artists")
-    fig.add_trace(go.Bar(x=df1, y=df9, name='2017/Music_Views', marker_color = color2))
-    fig.update_xaxes(title_text='Bibliography: https://www.connectmix.com/musical/ and https://rpubs.com/ortegopolis/semestre_spotify ')
-    fig . update_yaxes ( title_text = "Views/Position" ) 
+    df16 = df.loc[:, 'Posição_4']
 
-    fig.update_layout(
-        updatemenus=[
-            dict(
-                type="buttons",
-                direction="right",
-                x=0.8,
-                y=1.2,
-                showactive=True,
-                buttons=list([
+    # As variável color1 armazena as informações sobre as cores a serem usadas no gráfico. 
+    color1 = ['rgb(106,90,205)','rgb(131,111,255)','rgb(105,89,205)','rgb(72,61,139)','rgb(25,25,112)','rgb(0,0,128)','rgb(0,0,139)','rgb(0,0,205)','rgb(0,0,255)','rgb(100,149,237)']   
+    
+    # Agora, criamos uma pagina que exibirá o nosso gráfico
+    fig = go.Figure(layout_title_text="Music_View/Rank_Artists")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig.add_trace(go.Bar(x=df1, y=df9, name='2017/Music_Views', marker_color = color1))
+
+    # Essas 2 funções a baixo nomeiam os eixos "x" e "y", respectivamente.
+    fig.update_xaxes(title_text='Bibliography: https://www.connectmix.com/musical/ and https://rpubs.com/ortegopolis/semestre_spotify ')
+    fig.update_yaxes ( title_text = "Views/Position" ) 
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig.update_layout(  
+
+        # Aqui começaremos a adicionar os botões ao layout.
+        updatemenus= [ dict( 
+
+                
+                type="buttons",           
+                direction="right",  # Posição dos botões na página     
+                x=0.8,              # Muda a posição dos botões horizontalmente
+                y=1.2,              # Muda a posição dos botões verticalmente
+                showactive=True,    # Mostra qual botão está ativo
+
+                # Aqui armazenamos as informações sobre cada botão. De froma geral, cada botão atualiza as informações dos gráfcos.
+                buttons=list([ 
+
+                        # Os componentes a serem aplicados aos botões:
+                        # label - Define o título da pagina
+                        # method - O metodo a ser aplicado ao botão. Usamos o método update para poder modificar os dados e atributos do layout
+                        # args - Modifica os argumentos do layout, como o título, e atualiza os eixos.
+
+                        # Primeiro botão
                         dict(label="2017/Music_Views", method="update", args=[ {"x": [df1], "y": [df9]}, {"title": "2017/Music_Views"}]) ,
                         
+                        # Segundo botão
                         dict(label="2017/Rank", method="update", args=[ {"x": [df5], "y": [df13]}, {"title": "2017/Rank_Artists"} ]) ,
-
+                        
+                        # Terceiro botão
                         dict(label="2018/Music_Views", method="update", args=[ {"x": [df2], "y": [df10]},{"title": "2018/Music_Views"} ]) ,
-
+                        
+                        # Quarto botão
                         dict(label="2018/Rank", method="update", args=[ {"x": [df6], "y": [df14]}, {'title':"2018/Rank_Artists"} ]) ,
-
+                        
+                        # Quinto botão
                         dict(label="2019/Music_Views", method="update", args=[ {"x": [df3], "y": [df11]},{'title':'2019/Music_Views'} ]) ,
-
+                        
+                        # Sexto botão
                         dict(label="2019/Rank", method="update", args=[ {"x": [df7], "y": [df15]}, {'title':'2019/Rank_Artists'} ]) ,
-
+                        
+                        # Sétimo botão
                         dict(label="2020/Music_Views", method="update", args=[ {"x": [df4], "y": [df12]}, {'title':'2020/Music_Views'} ]) ,
-
+                        
+                        # Oitavo botão
                         dict(label="2020/Rank", method="update", args=[ {"x": [df8], "y": [df16]}, {'title':'2020/Rank_Artists'}])
-                    ] ) ) ] )                 
+                    ] ) ) ] )    
+
+    #Aqui chamamos a variável fig usando a função show() para mostrar o gráfico criado.          
     fig.show() 
 Artistas_Mais_Escutados()
