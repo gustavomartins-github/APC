@@ -1,7 +1,0 @@
-Fontes dos dados: 
-
-Connectmix -> https://www.connectmix.com/ranking/#/
-
-critério: número de execuções anuais
-
-Anos selecionados: 2017 a 2020
