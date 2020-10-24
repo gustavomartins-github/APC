@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 def grafico_apps():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = '/Users/geral/OneDrive/Área de Trabalho/APC/Dash Music interno/Graficos_interno_pc/Grafico Apps mais Usados/data_apps_mais_usados.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-git/Graficos/Grafico_Apps/data_apps_mais_usados.xlsx'
 
     # Cria um dataframe com as informações da planilha, além de usar loc e iloc para selecionar colunas específicas da planilha
     df = pd.read_excel(path)
