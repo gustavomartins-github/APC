@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 def Artistas_Mais_Escutados():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = "/home/mateus/dashmusic/DashMusic/Graficos/Grafico_Artistas_Mais_Ouvidos/Artistas_Mais_Ouvidos.xlsx"
+    path = ""
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
