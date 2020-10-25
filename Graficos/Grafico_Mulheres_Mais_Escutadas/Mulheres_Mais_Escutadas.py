@@ -1,12 +1,14 @@
 # Importando as biblitecas a serem usadas no programa
 import pandas as pd
 import plotly.graph_objects as go
+from plotly.graph_objs import Line
+from plotly.graph_objs.scatter.marker import Line
 
 # Criando uma função contendo as informações do o gráfico a ser gerado.
 def Artistas_Mais_Escutados():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = "D:\Mulheres_Mais_Escutadas\cantoras_(Pablo e Gustavo)-Feito.xlsx"
+    path = "/home/mateus/dashmusic/DashMusic/Graficos/Grafico_Mulheres_Mais_Escutadas/Cantoras.xlsx"
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
