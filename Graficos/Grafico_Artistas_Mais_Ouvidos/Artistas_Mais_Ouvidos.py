@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 def Artistas_Mais_Escutados():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = ""
+    path = "/home/yan/Documents/APC/DashMusic-git/Graficos/Grafico_Artistas_Mais_Ouvidos/Artistas_Mais_Ouvidos.xlsx"
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -33,14 +33,14 @@ def Artistas_Mais_Escutados():
     color1 = ['rgb(106,90,205)','rgb(131,111,255)','rgb(105,89,205)','rgb(72,61,139)','rgb(25,25,112)','rgb(0,0,128)','rgb(0,0,139)','rgb(0,0,205)','rgb(0,0,255)','rgb(100,149,237)']   
     
     # Agora, criamos uma pagina que exibirá o nosso gráfico
-    fig = go.Figure(layout_title_text="Music_View/Rank_Artists")
+    fig = go.Figure(layout_title_text="2017/Visualização das músicas")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig.add_trace(go.Bar(x=df1, y=df9, name='2017/Music_Views', marker_color = color1))
+    fig.add_trace(go.Bar(x=df1, y=df9, name='2017/Music Views', marker_color = color1))
 
     # Essas 2 funções a baixo nomeiam os eixos "x" e "y", respectivamente.
-    fig.update_xaxes(title_text='Bibliography: https://www.connectmix.com/musical/ and https://rpubs.com/ortegopolis/semestre_spotify ')
-    fig.update_yaxes ( title_text = "Views/Position" ) 
+    fig.update_xaxes(title_text='Música/artistas')
+    fig.update_yaxes ( title_text = "Visualização/Posição" ) 
 
     # Aqui adicionamos os componentes do layout da pagina.
     fig.update_layout(  
@@ -64,28 +64,28 @@ def Artistas_Mais_Escutados():
                         # args - Modifica os argumentos do layout, como o título, e atualiza os eixos.
 
                         # Primeiro botão
-                        dict(label="2017/Music_Views", method="update", args=[ {"x": [df1], "y": [df9]}, {"title": "2017/Music_Views"}]) ,
+                        dict(label="2017 Music Views", method="update", args=[ {"x": [df1], "y": [df9]}, {"title": "2017/Visualização das músicas"}]) ,
                         
                         # Segundo botão
-                        dict(label="2017/Rank", method="update", args=[ {"x": [df5], "y": [df13]}, {"title": "2017/Rank_Artists"} ]) ,
+                        dict(label="2017 Ranking", method="update", args=[ {"x": [df5], "y": [df13]}, {"title": "2017/Ranking dos artistas"} ]) ,
                         
                         # Terceiro botão
-                        dict(label="2018/Music_Views", method="update", args=[ {"x": [df2], "y": [df10]},{"title": "2018/Music_Views"} ]) ,
+                        dict(label="2018 Music Views", method="update", args=[ {"x": [df2], "y": [df10]},{"title": "2018/Visualização das músicas"} ]) ,
                         
                         # Quarto botão
-                        dict(label="2018/Rank", method="update", args=[ {"x": [df6], "y": [df14]}, {'title':"2018/Rank_Artists"} ]) ,
+                        dict(label="2018 Ranking", method="update", args=[ {"x": [df6], "y": [df14]}, {'title':"2018/Ranking dos artistas"} ]) ,
                         
                         # Quinto botão
-                        dict(label="2019/Music_Views", method="update", args=[ {"x": [df3], "y": [df11]},{'title':'2019/Music_Views'} ]) ,
+                        dict(label="2019 Music Views", method="update", args=[ {"x": [df3], "y": [df11]},{'title':'2019/Visualização das músicas'} ]) ,
                         
                         # Sexto botão
-                        dict(label="2019/Rank", method="update", args=[ {"x": [df7], "y": [df15]}, {'title':'2019/Rank_Artists'} ]) ,
+                        dict(label="2019 Ranking", method="update", args=[ {"x": [df7], "y": [df15]}, {'title':'2019/Ranking dos artistas'} ]) ,
                         
                         # Sétimo botão
-                        dict(label="2020/Music_Views", method="update", args=[ {"x": [df4], "y": [df12]}, {'title':'2020/Music_Views'} ]) ,
+                        dict(label="2020 Music Views", method="update", args=[ {"x": [df4], "y": [df12]}, {'title':'2020/Visualização das músicas'} ]) ,
                         
                         # Oitavo botão
-                        dict(label="2020/Rank", method="update", args=[ {"x": [df8], "y": [df16]}, {'title':'2020/Rank_Artists'}])
+                        dict(label="2020 Ranking", method="update", args=[ {"x": [df8], "y": [df16]}, {'title':'2020/Ranking dos artistas'}])
                     ] ) ) ] )    
 
     #Aqui chamamos a variável fig usando a função show() para mostrar o gráfico criado.          
