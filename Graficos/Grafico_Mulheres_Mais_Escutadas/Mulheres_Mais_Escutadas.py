@@ -35,7 +35,7 @@ def Artistas_Mais_Escutados():
 
     # Essas 2 funções a baixo nomeiam os eixos "x" e "y", respectivamente.
     fig.update_xaxes(title_text='Cantoras')
-    fig.update_yaxes ( title_text = "Views/Position" ) 
+    fig.update_yaxes ( title_text = "Visualização/Posição" ) 
 
     # Aqui adicionamos os componentes do layout da pagina.
     fig.update_layout(
