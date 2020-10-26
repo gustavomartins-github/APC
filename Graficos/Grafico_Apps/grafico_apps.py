@@ -12,7 +12,7 @@ def grafico_apps():
     df1 = df.loc[:, 'Nome']
     df2 = df.loc[:, 'Downloads']
     df3 = df.loc[:, 'Usuários ativos por dia']
-    df4 = df.loc[:, 'Tempo de uso']
+    df4 = df.loc[:, 'Tempo de uso em segundos']
 
     # Uma lista das cores que serão usadas no gráfico
     colors = ['rgb(50,205,50)', 'rgb(255,0,255)',
