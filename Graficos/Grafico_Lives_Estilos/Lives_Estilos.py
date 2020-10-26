@@ -45,8 +45,8 @@ def grafico_lives_estilo():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig.update_layout(
-        yaxis_title='Visualização',                                 # Título do eixo 'x'
-        xaxis_title='Estilo / Artista',                             # Título do eixo 'y'
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Estilo / Artista',                             # Título do eixo 'x'
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         updatemenus=[              # Adiciona botões ao gráfico
             dict(

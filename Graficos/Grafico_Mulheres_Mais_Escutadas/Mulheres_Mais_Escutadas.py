@@ -8,7 +8,7 @@ from plotly.graph_objs.scatter.marker import Line
 def Artistas_Mais_Escutados():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = "/home/mateus/dashmusic/DashMusic/Graficos/Grafico_Mulheres_Mais_Escutadas/Cantoras.xlsx"
+    path = "/home/yan/Documents/APC/DashMusic-git/Graficos/Grafico_Mulheres_Mais_Escutadas/CantorasV2.xlsx"
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -35,7 +35,7 @@ def Artistas_Mais_Escutados():
 
     # Essas 2 funções a baixo nomeiam os eixos "x" e "y", respectivamente.
     fig.update_xaxes(title_text='Cantoras')
-    fig . update_yaxes ( title_text = "Views/Position" ) 
+    fig.update_yaxes ( title_text = "Views/Position" ) 
 
     # Aqui adicionamos os componentes do layout da pagina.
     fig.update_layout(
@@ -53,28 +53,36 @@ def Artistas_Mais_Escutados():
                 buttons=list([
 
                         # Primeiro botão
-                        dict(label="TOP/2020", method="update", args=[ {"x": [df1], "y": [df2]}, {'title':'Artistas Femininas Mais Escutadas - 2020'}]) ,
+                        dict(label="TOP/2020", method="update",
+                        args=[ {"x": [df1], "y": [df2], "type":['line']}, {'title':'Artistas Femininas Mais Escutadas - 2020'}]) ,
 
                         # Segundo botão
-                        dict(label="RANK/2020", method="update", args=[ {"x": [df1], "y": [df3]}, {'title':'Rank cantoras 2020'}]) ,
+                        dict(label="RANK/2020", method="update",
+                        args=[ {"x": [df1], "y": [df3], "type":['bar'] }, {'title':'Ranking cantoras 2020'}]) ,
 
                         # Terceiro botão
-                        dict(label="TOP/2019", method="update", args=[ {"x": [df4], "y": [df5]}, {'title':'Artistas Femininas Mais Escutadas - 2019'}]) ,
+                        dict(label="TOP/2019", method="update",
+                        args=[ {"x": [df4], "y": [df5], "type":['line']}, {'title':'Artistas Femininas Mais Escutadas - 2019'}]) ,
 
                         # Quarto botão
-                        dict(label="RANK/2019", method="update", args=[ {"x": [df4], "y": [df6]}, {'title':'Rank cantoras 2019'}]) ,
+                        dict(label="RANK/2019", method="update",
+                        args=[ {"x": [df4], "y": [df6], "type":['bar']}, {'title':'Ranking cantoras 2019'}]) ,
 
                         # Quinto botão
-                        dict(label="TOP/2018", method="update", args=[ {"x": [df7], "y": [df8]}, {'title':'Artistas Femininas Mais Escutadas - 2018'}]) ,
+                        dict(label="TOP/2018", method="update",
+                        args=[ {"x": [df7], "y": [df8], "type":['line']}, {'title':'Artistas Femininas Mais Escutadas - 2018'}]) ,
 
                         # Sexto botão
-                        dict(label="RANK/2018", method="update", args=[ {"x": [df7], "y": [df9]}, {'title':'Rank cantoras 2018'}]) ,
+                        dict(label="RANK/2018", method="update",
+                        args=[ {"x": [df7], "y": [df9], "type":['bar']}, {'title':'Ranking cantoras 2018'}]) ,
 
                         # Sétimo botão
-                        dict(label="TOP/2017", method="update", args=[ {"x": [df10], "y": [df11]}, {'title':'Artistas Femininas Mais Escutadas - 2017'}]) ,
+                        dict(label="TOP/2017", method="update",
+                        args=[ {"x": [df10], "y": [df11], "type":['line']}, {'title':'Artistas Femininas Mais Escutadas - 2017'}]) ,
 
                         # Oitavo botão
-                        dict(label="RANK/2017", method="update", args=[ {"x": [df10], "y": [df12]}, {'title':'Rank cantoras 2017'}]) ,                        
+                        dict(label="RANK/2017", method="update",
+                        args=[ {"x": [df10], "y": [df12], "type":['bar'], 'hoverinfo': 'x+y+df2'}, {'title':'Ranking cantoras 2017'}]) ,                        
                     ] ) ) ] )                 
 
     #Aqui chamamos a variável fig usando a função show() para mostrar o gráfico criado. 
