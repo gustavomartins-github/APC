@@ -1,6 +1,13 @@
 import pandas as pd
 import plotly.graph_objects as go
 
+def seleciona_colunas(matriz_de_dados, número_da_coluna):
+    '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
+    como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
+    lista = []    # Cria uma lista vazia
+    for n in range(len(matriz_de_dados)): # laço de repetição no qual o n assume numeros inteiros de 0 até o tamanho da matriz fornecida(len).
+        lista.append(matriz_de_dados[n][número_da_coluna]) # a cada numero int que o n assume é adicionado a lista o objeto de posiçao 'número_da_coluna' da lista de posição n contida na matriz 'matriz_de_dados'.
+    return lista # retorna a lista com os dados contidos na coluna informada
 
 def grafico_lives_artistas():
 
@@ -9,6 +16,14 @@ def grafico_lives_artistas():
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
+
+    # Transforma o dataframe em uma matriz
+    matriz = df.values.tolist()
+
+    # Separa cada coluna da matriz
+
+    artista = seleciona_colunas(matriz,0)
+    visualização =seleciona_colunas(matriz,1)
 
     # Uma lista das cores que serão usadas no gráfico
     colors = ['rgb(0,0,0)', 'rgb(0, 0, 26)', 'rgb(0, 0, 51)', 
@@ -26,8 +41,8 @@ def grafico_lives_artistas():
     fig.add_trace(
         go.Bar(                                 # Determina o tipo do gráfico
 
-            x=df.Artista,                       # Determina o dado a ser representado no eixo 'x' do gráfico
-            y=df.Visualização,                  # Determina o dado a ser representado no eixo 'y' do gráfico
+            x=artista,                          # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualização,                     # Determina o dado a ser representado no eixo 'y' do gráfico
             marker_color=colors,                # Determina as cores das barras do gráfico
             marker_line_color='rgb(0,0,0)',     # Determina as cores das bordas das barras  
             marker_line_width=1.2,              # Determina a grossura das bordas
