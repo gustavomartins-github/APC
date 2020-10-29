@@ -21,7 +21,6 @@ def grafico_lives_artistas():
     matriz = df.values.tolist()
 
     # Separa cada coluna da matriz
-
     artista = seleciona_colunas(matriz,0)
     visualização =seleciona_colunas(matriz,1)
 
