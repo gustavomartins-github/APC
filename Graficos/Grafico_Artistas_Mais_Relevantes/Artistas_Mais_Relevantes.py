@@ -2,18 +2,30 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-# Criando uma função contendo as informações do o gráfico a ser gerado.
+# Cria uma função que cria uma lista com a coluna selecionada que possui os dados a serem utilizados.
+def seleciona_colunas(matriz_de_dados, número_da_coluna):
+    '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
+    como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
+    lista = []    # Cria uma lista vazia
+    for n in range(len(matriz_de_dados)): # laço de repetição no qual o n assume numeros inteiros de 0 até o tamanho da matriz fornecida(len).
+        lista.append(matriz_de_dados[n][número_da_coluna]) # a cada numero int que o n assume é adicionado a lista o objeto de posiçao 'número_da_coluna' da lista de posição n contida na matriz 'matriz_de_dados'.
+    return lista # retorna a lista com os dados contidos na coluna informada
+
+# Criando uma função contendo as informações do gráfico a ser gerado.
 def Artistas_Mais_Escutados():
 
     # A variável path armazena o local do arquivo no computador. Cada computador tem um local diferente, fique atento para o local no seu PC!
-    path = "D:\Todos_Os_Gráficos-Gustavo\Artistas_Mais_Relevantes\Artistas_Mais_Relevantes(Gustavo e JoãoP)-Feito.xlsx"
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Artistas_Mais_Relevantes/Artistas_Mais_Relevantes.xlsx'
     
     # Aqui eu uso o pandas para ler minha planilha em excel
     df = pd.read_excel(path)
-    
-    # Aqui eu armazeno nas variáveis "df1" e "df2" as colunas, com suas respectivas linhas, da planilha excel contendo os dados
-    df1 = df.loc[:, 'Posição']
-    df2 = df.loc[:, 'Artista' ]
+
+    # Cria uma matriz com todas as linhas do dataframe em formato de lista
+    matriz = df.values.tolist()  
+
+    # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
+    artista = seleciona_colunas(matriz, 1)
+    posicao = seleciona_colunas(matriz, 0)
     
     # A variável color armazena o "código rgb" de várias cores que irão ilustrar o gráfico"
     color = ['rgb(106,90,205)','rgb(131,111,255)','rgb(105,89,205)','rgb(72,61,139)','rgb(25,25,112)','rgb(0,0,128)','rgb(0,0,139)','rgb(0,0,205)',
@@ -38,7 +50,7 @@ def Artistas_Mais_Escutados():
     
     # Aqui eu defino a figura como um gráfico de barras, além de definir um nome, as colunas da planilha excel que representarão os eixos e, por fim, as cores.
     # Lembre-se: as cores defindas estão armazenadas na variável color.
-    fig.add_trace(go.Bar(x=df2, y=df1, name='Artistas mais relevantes', marker_color = color))
+    fig.add_trace(go.Bar(x=artista, y=posicao, name='Artistas mais relevantes', marker_color = color))
     
     # Aqui eu defini um nome para os eixos X e Y
     fig.update_xaxes(title_text='Nome Dos Artistas')
@@ -54,7 +66,7 @@ def Artistas_Mais_Escutados():
                 y=1.2,
                 showactive=True,
                 buttons=list([   #label=nome do botão                  #aqui você altera os eixos  #aqui você define um novo título, caso queira                   
-                        dict(label="Aritistas_Brasil", method="update", args=[ {"x": [df2], "y": [df1]}, {'title':'Artistas mais relevantes para escala evolutiva da música genuinamente Brasileira'}])                        
+                        dict(label="Artistas_Brasil", method="update", args=[ {"x": [artista], "y": [posicao]}, {'title':'Artistas mais relevantes para escala evolutiva da música genuinamente Brasileira'}])                        
                     ] ) ) ] )        
     
     # A função "fig.show()" apresenta a figura quando a função "Artistas_Mais_Escutados()" é chamada          
