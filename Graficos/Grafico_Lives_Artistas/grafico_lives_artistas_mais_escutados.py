@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 
+
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
     '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
     como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
@@ -12,7 +13,7 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
 def grafico_lives_artistas():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = '/home/yan/DashMusic/dashboard/Lives_mais_Escutadas_Artistas.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Lives_Artistas/Lives_mais_Escutadas_Artistas.xlsx'
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)

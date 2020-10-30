@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-# Cria uma função que cria uma lista com a coluna selecionada que possui os dados a serem utilizados.
+
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
     '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
     como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
