@@ -694,8 +694,8 @@ def grafico_mulheres_mais_escutadas():
             x=6.2, y=1.16, yref="paper", align="left"),
             dict(text="Ranking artistas femininas mais escutadas:", showarrow=False,
             x=8.180, y=1.16, yref="paper", align="left")
-    ]
-)
+    ])
+
 
  
     return fig
