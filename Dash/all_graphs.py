@@ -14,7 +14,7 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
 def grafico_apps():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx'
 
     df = pd.read_excel(path)   # Cria um dataframe com as informações da planilha
     matriz = df.values.tolist()   # Cria uma matriz com todas as linhas do dataframe em formato de lista
@@ -100,7 +100,7 @@ def grafico_apps():
 def grafico_artistas_mais_ouvidos():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx'
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -199,7 +199,7 @@ def grafico_artistas_mais_ouvidos():
 def grafico_artistas_mais_relevantes():
 
     # A variável path armazena o local do arquivo no computador. Cada computador tem um local diferente, fique atento para o local no seu PC!
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx'
     
     # Aqui eu uso o pandas para ler minha planilha em excel
     df = pd.read_excel(path)
@@ -268,7 +268,7 @@ def grafico_artistas_mais_relevantes():
 def grafico_generos_mais_ouvidos():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx'
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -348,7 +348,7 @@ def grafico_generos_mais_ouvidos():
 def grafico_lives_artistas_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx'
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -397,7 +397,7 @@ def grafico_lives_artistas_mais_escutados():
 def grafico_lives_estilos_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico principal
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx'
 
     # Cria um dataframe com as informações da planilha do gráfico principal
     df = pd.read_excel(path)
@@ -413,7 +413,7 @@ def grafico_lives_estilos_mais_escutados():
     visualizaçao = seleciona_colunas(matriz,2)
     
     # Especifica o caminho do computador até a planilha dos gráficos secundários
-    path2 = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx'
+    path2 = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx'
 
     # Cria um dataframe com as informações da planilha dos gráficos secundários
     df2 = pd.read_excel(path2)
@@ -471,8 +471,7 @@ def grafico_lives_estilos_mais_escutados():
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         updatemenus=[                                               # Adiciona botões ao gráfico
             dict(
-                type="buttons",
-                direction="right",  # Posição dos botões na página
+                direction="down",  # Posição dos botões na página
                 x=0.9,              # Muda a posição dos botões horizontalmente
                 y=1.1,              # Muda a posição dos botões verticalmente
                 showactive=True,    # Mostra qual botão está ativo
@@ -484,7 +483,6 @@ def grafico_lives_estilos_mais_escutados():
                             args=[{"x": [estilos],    # Argumentos e dados a serem alterados
                                    "y": [visualizaçao],
                                    "type": ["bar"],
-                                   "text": nomes,
                                    "hoverinfo":["text+y"]},
                                    {'xaxis': {'title': 'Artista'}}],
                         ),
@@ -544,7 +542,7 @@ def grafico_lives_estilos_mais_escutados():
 def grafico_mulheres_mais_escutadas():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -579,27 +577,25 @@ def grafico_mulheres_mais_escutadas():
 
     
     # Agora, criamos uma pagina que exibirá o nosso gráfico
-    fig = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas - 2020")
+    fig = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas 2020")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
     fig.add_trace(go.Scatter(x=cantoras2020, 
                              y=execuçoes2020,
                              name='Artistas Femininas Mais Escutadas',
                              marker_color='rgb(255, 0, 246)'))
-
-    # Essas 2 funções a baixo nomeiam os eixos "x" e "y", respectivamente.
-    fig.update_xaxes(title_text='Cantoras')
-    fig.update_yaxes ( title_text = "Visualização/Posição" ) 
+    
 
     # Aqui adicionamos os componentes do layout da pagina.
     fig.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
 
         # Aqui começaremos a adicionar os botões ao layout.
         updatemenus=[
             dict(
-                type="buttons",
-                direction="right",
-                x=0.8,
+                direction="down",
+                x=0.775,
                 y=1.2,
                 showactive=True,
 
@@ -607,61 +603,99 @@ def grafico_mulheres_mais_escutadas():
                 buttons=list([
 
                         # Primeiro botão
-                        dict(label="TOP/2020", method="update",
+                        dict(label="2020", method="update",
                         args=[ {"x": [cantoras2020], 
                                 "y": [execuçoes2020],
                                 "type":['line']}, 
-                                {'title':'Artistas Femininas Mais Escutadas - 2020'}]) ,
-
-                        # Segundo botão
-                        dict(label="RANK/2020", method="update",
-                        args=[ {"x": [cantoras2020],
-                                "y": [posiçao2020], 
-                                "type":['bar']}, 
-                                {'title':'Ranking cantoras 2020'}]) ,
+                                {'title':'Artistas Femininas Mais Escutadas 2020:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Visualizações'}}]) ,
 
                         # Terceiro botão
-                        dict(label="TOP/2019", method="update",
+                        dict(label="2019", method="update",
                         args=[ {"x": [cantoras2019], 
                                 "y": [execuçoes2019],
                                 "type":['line']},
-                                {'title':'Artistas Femininas Mais Escutadas - 2019'}]) ,
-
-                        # Quarto botão
-                        dict(label="RANK/2019", method="update",
-                        args=[ {"x": [cantoras2019],
-                                "y": [posiçao2019],
-                                "type":['bar']},
-                                {'title':'Ranking cantoras 2019'}]) ,
+                                {'title':'Artistas Femininas Mais Escutadas 2019:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Visualizações'}}]) ,
 
                         # Quinto botão
-                        dict(label="TOP/2018", method="update",
+                        dict(label="2018", method="update",
                         args=[ {"x": [cantoras2018],
                                 "y": [execuçoes2018],
                                 "type":['line']},
-                                {'title':'Artistas Femininas Mais Escutadas - 2018'}]) ,
-
-                        # Sexto botão
-                        dict(label="RANK/2018", method="update",
-                        args=[ {"x": [cantoras2018], 
-                                "y": [posiçao2018],
-                                "type":['bar']},
-                                {'title':'Ranking cantoras 2018'}]) ,
+                                {'title':'Artistas Femininas Mais Escutadas 2018:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Visualizações'}}]) ,
 
                         # Sétimo botão
-                        dict(label="TOP/2017", method="update",
+                        dict(label="2017", method="update",
                         args=[ {"x": [cantoras2017],
                                 "y": [execuçoes2017],
                                 "type":['line']}, 
-                                {'title':'Artistas Femininas Mais Escutadas - 2017'}]) ,
+                                {'title':'Artistas Femininas Mais Escutadas 2017:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Visualizações'}}]) ,
+           
+                    ] ) ),
+
+
+
+            dict(
+                direction="down",
+                x=1.0,
+                y=1.2,
+                showactive=True,          
+                buttons=list([
+
+                        # Segundo botão
+                        dict(label="2020", method="update",
+                        args=[ {"x": [cantoras2020],
+                                "y": [posiçao2020], 
+                                "type":['bar']}, 
+                                {'title':'Ranking artistas femininas 2020:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Posição no ranking'}}]) ,
+
+
+                        # Quarto botão
+                        dict(label="2019", method="update",
+                        args=[ {"x": [cantoras2019],
+                                "y": [posiçao2019],
+                                "type":['bar']},
+                                {'title':'Ranking artistas femininas 2019:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Posição no ranking'}}]) ,
+
+
+                        # Sexto botão
+                        dict(label="2018", method="update",
+                        args=[ {"x": [cantoras2018], 
+                                "y": [posiçao2018],
+                                "type":['bar']},
+                                {'title':'Ranking artistas femininas 2018:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Posição no ranking'}}]) ,
 
                         # Oitavo botão
-                        dict(label="RANK/2017", method="update",
+                        dict(label="2017", method="update",
                         args=[ {"x": [cantoras2017],
                                 "y": [posiçao2017],
                                 "type":['bar']},
-                                {'title':'Ranking cantoras 2017'}]),                        
-                    ] ) ) ] )                 
+                                {'title':'Ranking artistas femininas 2017:',
+                                'xaxis':{'title': 'Artistas'},
+                                'yaxis':{'title': 'Posição no ranking'}}]),
+                                ] ) ) ] )
+
+    fig.update_layout(
+        annotations=[
+            dict(text="Músicas mais visualizadas:", showarrow=False,
+            x=6.2, y=1.16, yref="paper", align="left"),
+            dict(text="Ranking artistas femininas mais escutadas:", showarrow=False,
+            x=8.180, y=1.16, yref="paper", align="left")
+    ]
+)
 
  
     return fig
