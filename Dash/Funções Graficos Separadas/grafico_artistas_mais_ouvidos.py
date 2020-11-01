@@ -13,10 +13,10 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
 
 
 # Criando uma função contendo as informações do o gráfico a ser gerado.
-def Artistas_Mais_Escutados():
+def grafico_artistas_mais_ouvidos():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Artistas_Mais_Ouvidos/Artistas_Mais_Ouvidos.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx'
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -109,8 +109,4 @@ def Artistas_Mais_Escutados():
                         {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, 'title':'2020/Ranking dos artistas'}])
                     ] ) ) ] )    
 
-    #Aqui chamamos a variável fig usando a função show() para mostrar o gráfico criado.          
-    fig.show()
-
-# No final do programa, chamamos a função contendo o gráfico. 
-Artistas_Mais_Escutados()
+    return fig

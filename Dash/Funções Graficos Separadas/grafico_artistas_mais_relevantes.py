@@ -14,10 +14,10 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
     return lista # retorna a lista com os dados contidos na coluna informada
 
 # Criando uma função contendo as informações do gráfico a ser gerado.
-def Artistas_Mais_Relevantes():
+def grafico_artistas_mais_relevantes():
 
     # A variável path armazena o local do arquivo no computador. Cada computador tem um local diferente, fique atento para o local no seu PC!
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Artistas_Mais_Relevantes/Artistas_Mais_Relevantes.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx'
     
     # Aqui eu uso o pandas para ler minha planilha em excel
     df = pd.read_excel(path)
@@ -79,8 +79,6 @@ def Artistas_Mais_Relevantes():
                                                    # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
          
     
-    # A função "fig.show()" apresenta a figura quando a função "Artistas_Mais_Escutados()" é chamada          
-    fig.show()
-
-# Por fim, no final do código eu chamo a função que eu criei contendo a figura que representa o gráfico. Assim, quando eu rodar o código, a figura será exibida.
-Artistas_Mais_Relevantes()
+              
+    return fig
+    

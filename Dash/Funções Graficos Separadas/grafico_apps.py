@@ -15,7 +15,7 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
 def grafico_apps():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Apps/data_apps_mais_usados.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx'
 
     df = pd.read_excel(path)   # Cria um dataframe com as informações da planilha
     matriz = df.values.tolist()   # Cria uma matriz com todas as linhas do dataframe em formato de lista
@@ -95,7 +95,5 @@ def grafico_apps():
             )
         ]
     )
-    fig.show()  # Mostra o gráfico
+    return fig
 
-
-grafico_apps()

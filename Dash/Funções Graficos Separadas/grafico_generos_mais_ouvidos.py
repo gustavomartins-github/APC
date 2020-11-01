@@ -11,10 +11,10 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
     return lista # retorna a lista com os dados contidos na coluna informada
 
 
-def grafico_generos():
+def grafico_generos_mais_ouvidos():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Generos/Gêneros_mais_ouvidos.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx'
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -88,6 +88,4 @@ def grafico_generos():
     )
 
 
-    fig.show()          # Mostra o gráfico
-
-grafico_generos()
+    return fig

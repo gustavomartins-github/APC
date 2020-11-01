@@ -10,10 +10,10 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
         lista.append(matriz_de_dados[n][número_da_coluna]) # a cada numero int que o n assume é adicionado a lista o objeto de posiçao 'número_da_coluna' da lista de posição n contida na matriz 'matriz_de_dados'.
     return lista # retorna a lista com os dados contidos na coluna informada
 
-def grafico_lives_artistas():
+def grafico_lives_artistas_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Lives_Artistas/Lives_mais_Escutadas_Artistas.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx'
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -56,7 +56,4 @@ def grafico_lives_artistas():
         yaxis_title='Visualização',                         # Título do eixo 'y'
     )
 
-    fig.show()      # Mostra o gráfico
-
-
-grafico_lives_artistas()
+    return fig

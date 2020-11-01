@@ -11,10 +11,10 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
     return lista # retorna a lista com os dados contidos na coluna informada
 
 
-def grafico_lives_estilo():
+def grafico_lives_estilos_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico principal
-    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Lives_Estilos/Lives_Mais_Escutadas_Estilo.xlsx'
+    path = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx'
 
     # Cria um dataframe com as informações da planilha do gráfico principal
     df = pd.read_excel(path)
@@ -30,7 +30,7 @@ def grafico_lives_estilo():
     visualizaçao = seleciona_colunas(matriz,2)
     
     # Especifica o caminho do computador até a planilha dos gráficos secundários
-    path2 = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Graficos/Grafico_Lives_Estilos/Estilos_data2.xlsx'
+    path2 = 'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx'
 
     # Cria um dataframe com as informações da planilha dos gráficos secundários
     df2 = pd.read_excel(path2)
@@ -155,7 +155,4 @@ def grafico_lives_estilo():
         ]
     )
 
-    fig.show()      # Mostra o gráfico
-
-
-grafico_lives_estilo()
+    return fig
