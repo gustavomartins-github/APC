@@ -34,7 +34,7 @@ app.layout = html.Div([
             id='grafico_artistas_mais_escutados',
             figure= graficos.grafico_artistas_mais_ouvidos()
         )      
-    ], style={'marginTop': 150}),
+    ], style={'marginTop': 180}),
     
 
     html.Div([
@@ -42,7 +42,7 @@ app.layout = html.Div([
             id='grafico_artistas_mais_relevantes',
             figure= graficos.grafico_artistas_mais_relevantes()    
         )      
-    ], style={'marginTop': 150}),
+    ], style={'marginTop': 180}),
 
 
     html.Div([
@@ -50,7 +50,7 @@ app.layout = html.Div([
             id='grafico_generos_mais_ouvidos',
             figure= graficos.grafico_generos_mais_ouvidos()   
         )      
-    ], style={'marginTop': 150}),
+    ], style={'marginTop': 180}),
 
 
     html.Div([
@@ -58,7 +58,7 @@ app.layout = html.Div([
         id='grafico_lives_artistas_mais_escutados',
         figure= graficos.grafico_lives_artistas_mais_escutados()   
         )      
-    ], style={'marginTop': 150}),
+    ], style={'marginTop': 180}),
 
 
     html.Div([
@@ -66,7 +66,7 @@ app.layout = html.Div([
         id='grafico_lives_estilos_mais_escutados',
         figure= graficos.grafico_lives_estilos_mais_escutados() 
         )      
-    ], style={'marginTop': 150}),
+    ], style={'marginTop': 180}),
 
     
     html.Div([
@@ -74,7 +74,7 @@ app.layout = html.Div([
         id='grafico_mulheres_mais_escutadas',
         figure= graficos.grafico_mulheres_mais_escutadas() 
         )      
-    ], style={'marginTop': 150})
+    ], style={'marginTop': 180})
     
 ])
 
