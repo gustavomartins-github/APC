@@ -51,6 +51,7 @@ def grafico_apps():
 
     fig.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Número de Downloads por aplicativo nos últimos 3 meses:',  # Título do gráfico
+        #height= 400,
         xaxis_title='Aplicativos',   # Título do eixo 'x'
         yaxis_title='Downloads',     # Título do eixo 'y'
         updatemenus=[    # Adiciona menus
@@ -157,6 +158,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig.update_layout(
         title_text="Músicas mais vizualizadas em 2017:",
+        height=600,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
  
@@ -165,7 +167,7 @@ def grafico_artistas_mais_ouvidos():
                 direction="down",
                 pad={"r": 10, "t": 10},       
                 x=0.721,              
-                y=1.25,
+                y=1.18,
                 xanchor= 'right',
                 yanchor='top',              
                 showactive=True,   
@@ -176,8 +178,12 @@ def grafico_artistas_mais_ouvidos():
                             method="update", 
                             args=[ 
                                 {"x": [musica_2017], "y": [vizualizacoes_2017]}, 
-                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, "title": "Músicas mais vizualizadas em 2017:"}
-                            ]
+                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, 
+                                "title": "Músicas mais vizualizadas em 2017:",
+                                'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                    x=6.1, y=1.135, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                    x=8.9, y=1.135, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                         ),
 
 
@@ -186,8 +192,12 @@ def grafico_artistas_mais_ouvidos():
                             method="update", 
                             args=[ 
                                 {"x": [musica_2018], "y": [vizualizacoes_2018]}, 
-                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, "title": "Músicas mais vizualizadas em 2018:"}
-                            ]
+                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, 
+                                "title": "Músicas mais vizualizadas em 2018:",
+                                'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                    x=6.1, y=1.14, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                    x=8.9, y=1.14, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                         ),
 
 
@@ -196,8 +206,12 @@ def grafico_artistas_mais_ouvidos():
                             method="update", 
                             args=[ 
                                 {"x": [musica_2019], "y": [vizualizacoes_2019]}, 
-                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, "title": "Músicas mais vizualizadas em 2019:"}
-                            ]
+                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, 
+                                "title": "Músicas mais vizualizadas em 2019:",
+                                'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                    x=6.1, y=1.14, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                    x=8.9, y=1.14, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                         ),
 
 
@@ -206,8 +220,12 @@ def grafico_artistas_mais_ouvidos():
                             method="update", 
                             args=[ 
                                 {"x": [musica_2020], "y": [vizualizacoes_2020]}, 
-                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, "title": "Músicas mais vizualizadas em 2020:"}
-                            ]
+                                {'yaxis':{'title': 'Número de Visualizações'},'xaxis':{'title': 'Músicas'}, 
+                                "title": "Músicas mais vizualizadas em 2020:",
+                                'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                    x=6.1, y=1.135, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                    x=8.9, y=1.135, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                         ),
                 ])
             ),
@@ -217,7 +235,7 @@ def grafico_artistas_mais_ouvidos():
                 direction="down",       
                 pad={"r": 10, "t": 10},       
                 x=1.0,              
-                y=1.25,
+                y=1.18,
                 xanchor= 'right',
                 yanchor='top',              
                 showactive=True,
@@ -227,8 +245,12 @@ def grafico_artistas_mais_ouvidos():
                         method="update", 
                         args=[ 
                             {"x": [artista_2017], "y": [posicao_2017]}, 
-                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, "title": "Ranking dos artistas mais escutados em 2017:"} 
-                        ]
+                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, 
+                            "title": "Ranking dos artistas mais escutados em 2017:",
+                            'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                               x=6.1, y=1.145, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                           dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                               x=8.9, y=1.145, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                     ),
 
 
@@ -236,8 +258,12 @@ def grafico_artistas_mais_ouvidos():
                         method="update", 
                         args=[ 
                             {"x": [artista_2018], "y": [posicao_2018]}, 
-                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, "title": "Ranking dos artistas mais escutados em 2018:"} 
-                        ]
+                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, 
+                            "title": "Ranking dos artistas mais escutados em 2018:",
+                            'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                x=6.1, y=1.135, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                           dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                x=8.9, y=1.135, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                     ),
 
 
@@ -245,8 +271,12 @@ def grafico_artistas_mais_ouvidos():
                         method="update", 
                         args=[ 
                             {"x": [artista_2019], "y": [posicao_2019]}, 
-                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, "title": "Ranking dos artistas mais escutados em 2019:"} 
-                        ]
+                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, 
+                            "title": "Ranking dos artistas mais escutados em 2019:",
+                            'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                x=6.1, y=1.145, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                           dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                x=8.9, y=1.145, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                     ),
 
 
@@ -254,8 +284,12 @@ def grafico_artistas_mais_ouvidos():
                         method="update", 
                         args=[ 
                             {"x": [artista_2020], "y": [posicao_2020]}, 
-                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, "title": "Ranking dos artistas mais escutados em 2020:"} 
-                        ]
+                            {'yaxis':{'title': 'Posição'},'xaxis':{'title': 'Artistas'}, 
+                            "title": "Ranking dos artistas mais escutados em 2020:",
+                            'annotations':[dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+                                                x=6.1, y=1.14, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                           dict(text="Filtro artistas mais escutados em:", showarrow=False,
+                                                x=8.9, y=1.14, yref="paper", align="left",xanchor='right',yanchor='top')]}]
                     ),
                 ])
             )
@@ -265,10 +299,10 @@ def grafico_artistas_mais_ouvidos():
 
     fig.update_layout(
         annotations=[
-            dict(text="Músicas mais visualizadas em:", showarrow=False,
-            x=6.1, y=1.17, yref="paper", align="left", xanchor='right',yanchor='top'),
-            dict(text="Artistas mais escutados em:", showarrow=False,
-            x=8.9, y=1.17, yref="paper", align="left",xanchor='right',yanchor='top')
+            dict(text="Filtro músicas mais visualizadas em:", showarrow=False,
+            x=6.1, y=1.135, yref="paper", align="left", xanchor='right',yanchor='top'),
+            dict(text="Filtro artistas mais escutados em:", showarrow=False,
+            x=8.9, y=1.135, yref="paper", align="left",xanchor='right',yanchor='top')
     ])
        
     return fig
@@ -325,6 +359,7 @@ def grafico_artistas_mais_relevantes():
     
     # Atualiza o layout da página
     fig.update_layout(
+    height = 700,
     xaxis_title = "Artistas",               # Muda o título do eixo x
     yaxis_title = "Posição no ranking",     # Muda o título do eixo y
     xaxis=dict(                             # Altera as propriedades do eixo x
@@ -387,6 +422,7 @@ def grafico_generos_mais_ouvidos():
 
     fig.update_layout(     # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Gêneros musicais mais escutados por ano:',  # Título do gráfico
+        height = 600,
         updatemenus=[       # Adiciona botões no layout
             dict(
                 type="buttons",
@@ -465,6 +501,7 @@ def grafico_lives_artistas_mais_escutados():
     fig.update_layout(                          # Componentes do layout da página (Título, título dos eixos e botões)
         #plot_bgcolor='rgb(255, 179, 179)',      # Cor do fundo da página
         title_text='Lives mais visualizadas por artista:',  # Título do gráfico
+        #height=700,
         xaxis_title='Artistas',                             # Título do eixo 'x'
         yaxis_title='Visualização',                         # Título do eixo 'y'
     )
@@ -537,6 +574,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçao,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -544,15 +582,22 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.18, yref="paper", align="left",xanchor='right',yanchor='top')],
+
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         updatemenus=[                                               # Adiciona botões ao gráfico
             dict(
-                type="buttons",
-                direction="right",  # Posição dos botões na página
+                #type="buttons",
+                direction="down",  # Posição dos botões na página
+                pad={"r": 10, "t": 10}, 
                 x=0.9,              # Muda a posição dos botões horizontalmente
-                y=1.1,              # Muda a posição dos botões verticalmente
+                y=1.25,
+                xanchor='auto',
+                yanchor='auto',          # Muda a posição dos botões verticalmente
                 showactive=True,    # Mostra qual botão está ativo
                 buttons=list(
                     [
@@ -561,26 +606,53 @@ def grafico_lives_estilos_mais_escutados():
                             method="update",
                             args=[{"x": [estilos],    # Argumentos e dados a serem alterados
                                    "y": [visualizaçao],
+                                   "marker.line.color": ['rgb(255,255,255)'],
                                    "type": ["bar"],
                                    "text": nomes,
                                    "hoverinfo":["text+y"]},
-                                   {'xaxis': {'title': 'Artista'}}],
+                                   {'xaxis': {'title': 'Artista'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=3.6, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         ),
                         dict(
                             label="Sertanejo",
                             method="update",
                             args=[{"x": [cantores_sertanejo],
                                    "y": [visualizaçoes_sertanejo],
+                                   "marker.line.color": ['rgb(0,0,0)'],
                                    "hoverinfo":['x+y']},
-                                   {'xaxis': {'title': 'Estilo Musical'}}],
+                                   {'xaxis': {'title': 'Estilo Musical'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=7.7, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         ),
                         dict(
                             label="Pagode",
                             method="update",
                             args=[{"x": [cantores_pagode],
                                    "y": [visualizaçoes_pagode],
+                                   "marker.line.color": ['rgb(0,0,0)'],
                                    "hoverinfo":["x+y"]},
-                                   {'xaxis': {'title': 'Estilo Musical'}}],
+                                   {'xaxis': {'title': 'Estilo Musical'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=7.7, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         ),
                         dict(
                             label="Forró",
@@ -588,8 +660,17 @@ def grafico_lives_estilos_mais_escutados():
                             args=[{
                                    "x": [cantores_forro],
                                    "y": [visualizaçoes_forro],
+                                   "marker.line.color": ['rgb(0,0,0)'],
                                    "hoverinfo":["x+y"]},
-                                   {'xaxis': {'title': 'Estilo Musical'}}],
+                                   {'xaxis': {'title': 'Estilo Musical'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=7.7, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         ),
                         dict(
                             label="Funk",
@@ -597,8 +678,17 @@ def grafico_lives_estilos_mais_escutados():
                             args=[{
                                    "x": [cantores_funk],
                                    "y": [visualizaçoes_funk],
+                                   "marker.line.color": ['rgb(0,0,0)'],
                                    "hoverinfo":["x+y"]},
-                                   {'xaxis': {'title': 'Estilo Musical'}}],
+                                   {'xaxis': {'title': 'Estilo Musical'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=7.7, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         ),
                         dict(
                             label="MPB",
@@ -606,15 +696,26 @@ def grafico_lives_estilos_mais_escutados():
                             args=[{
                                    "x": [cantores_mpb],
                                    "y": [visualizaçoes_mpb],
+                                   "marker.line,color": ['rgb(0,0,0)'],
                                    "hoverinfo":["x+y"],
                                    "text":[visualizaçoes_mpb]},
-                                   {'xaxis': {'title': 'Estilo Musical'}}]
+                                   {'xaxis': {'title': 'Estilo Musical'}, 
+                                   'annotations':[dict(
+                                       text="Filtro por estilo musical:", 
+                                       showarrow=False,
+                                       x=7.7, y=1.18, 
+                                       yref="paper", 
+                                       align="left",
+                                       xanchor='right',
+                                       yanchor='top')]}]
                         )
                     ]
                 ),
             )
         ]
     )
+
+
 
     return fig
 
@@ -671,13 +772,13 @@ def grafico_mulheres_mais_escutadas():
     fig.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-
+        height = 600,
         # Aqui começaremos a adicionar os botões ao layout.
         updatemenus=[
             dict(
                 direction="down",
                 x=0.721,
-                y=1.3,
+                y=1.16,
                 pad={"r": 10, "t": 10},
                 xanchor= 'right',
                 yanchor= 'top',
@@ -730,7 +831,7 @@ def grafico_mulheres_mais_escutadas():
                 direction="down",
                 pad={"r": 10, "t": 10},
                 x=1.0,
-                y=1.3,  
+                y=1.16,  
                 xanchor= 'right',
                 yanchor= 'top',
                 showactive=True,          
@@ -781,10 +882,10 @@ def grafico_mulheres_mais_escutadas():
 
     fig.update_layout(
         annotations=[
-            dict(text="Músicas mais visualizadas em:", showarrow=False,
-            x=6.1, y=1.2, yref="paper", align="left", xanchor='right',yanchor='top'),
+            dict(text="Número de visualizações por artista:", showarrow=False,
+            x=6.1, y=1.115, yref="paper", align="left", xanchor='right',yanchor='top'),
             dict(text="Ranking artistas femininas mais escutadas em:", showarrow=False,
-            x=8.9, y=1.2, yref="paper", align="left", xanchor='right',yanchor='top')
+            x=8.9, y=1.115, yref="paper", align="left", xanchor='right',yanchor='top')
     ])
                  
 
