@@ -15,15 +15,8 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-paths= ['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
-        ]
+paths= [#coloque todos os seus paths em lista aqui]
+        
 
 
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
