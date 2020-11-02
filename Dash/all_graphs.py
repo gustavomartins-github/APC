@@ -15,7 +15,7 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-paths= [#coloque todos os seus paths em lista aqui]
+paths= [""] #coloque todos os seus paths em lista aqui
         
 
 
