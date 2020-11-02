@@ -2,6 +2,30 @@ import pandas as pd
 import plotly.graph_objects as go
 
 
+def all_paths(lista_de_paths, numero_do_path):
+    '''Respectivos numeros dos paths:
+    0 - grafico apps; 
+    1 - grafico artistas mais escutados; 
+    2 - grafico artistas mais relevantes; 
+    3 - grafico generos mais escutados;
+    4 - grafico lives aartistas mais escutados; 
+    5 - grafico lives generos mais escutados(data 1); 
+    6 - grafico lives generos mais escutados(data 2);
+    7 - grafico mulheres mais escutadas.'''
+    return lista_de_paths[numero_do_path]
+
+
+paths= ['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+        ]
+
+
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
     '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
     como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
@@ -14,7 +38,7 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
 def grafico_apps():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx'
+    path = all_paths(paths, 0)
 
     df = pd.read_excel(path)   # Cria um dataframe com as informações da planilha
     matriz = df.values.tolist()   # Cria uma matriz com todas as linhas do dataframe em formato de lista
@@ -109,7 +133,7 @@ def grafico_apps():
 def grafico_artistas_mais_ouvidos():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx'
+    path = all_paths(paths, 1)
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
@@ -311,7 +335,7 @@ def grafico_artistas_mais_ouvidos():
 def grafico_artistas_mais_relevantes():
 
     # A variável path armazena o local do arquivo no computador. Cada computador tem um local diferente, fique atento para o local no seu PC!
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx'
+    path = all_paths(paths, 2)
     
     # Aqui eu uso o pandas para ler minha planilha em excel
     df = pd.read_excel(path)
@@ -382,7 +406,7 @@ def grafico_artistas_mais_relevantes():
 def grafico_generos_mais_ouvidos():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx'
+    path = all_paths(paths, 3)
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -463,7 +487,7 @@ def grafico_generos_mais_ouvidos():
 def grafico_lives_artistas_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx'
+    path = all_paths(paths, 4)
 
     # Cria um dataframe com as informações da planilha
     df = pd.read_excel(path)
@@ -512,7 +536,7 @@ def grafico_lives_artistas_mais_escutados():
 def grafico_lives_estilos_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico principal
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx'
+    path = all_paths(paths, 5)
 
     # Cria um dataframe com as informações da planilha do gráfico principal
     df = pd.read_excel(path)
@@ -528,7 +552,7 @@ def grafico_lives_estilos_mais_escutados():
     visualizaçao = seleciona_colunas(matriz,2)
     
     # Especifica o caminho do computador até a planilha dos gráficos secundários
-    path2 = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx'
+    path2 = all_paths(paths, 6)
 
     # Cria um dataframe com as informações da planilha dos gráficos secundários
     df2 = pd.read_excel(path2)
@@ -588,7 +612,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=700, 
+        height=600, 
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         updatemenus=[                                               # Adiciona botões ao gráfico
             dict(
@@ -723,7 +747,7 @@ def grafico_lives_estilos_mais_escutados():
 def grafico_mulheres_mais_escutadas():
 
     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
-    path = '/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+    path = all_paths(paths, 7)
 
      # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
