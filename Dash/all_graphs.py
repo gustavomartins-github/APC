@@ -389,10 +389,6 @@ def grafico_artistas_mais_relevantes():
         type="category"                     # Diz o tipo do slider (nesse caso é "category", pois se trata de números)
         )
     ) 
-               
-    fig['layout']['xaxis'].update(range=([-1,20])) # Determina o quanto do gráfico será mostrado inicialmente
-                                                   # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
-         
     
               
     return fig
