@@ -381,6 +381,8 @@ def grafico_artistas_mais_relevantes():
     yaxis_title = "Posição no ranking",     # Muda o título do eixo y
     xaxis=dict(                             # Altera as propriedades do eixo x
 
+        range=([1,20]),                     # Determina o quanto do gráfico será mostrado inicialmente
+                                            # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
         rangeslider=dict(                   # Adiciona o Slider
             visible=True,                   # Torna o slider visível
         ),
