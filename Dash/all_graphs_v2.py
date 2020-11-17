@@ -165,21 +165,38 @@ def grafico_artistas_mais_ouvidos():
 
     # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
     musica_2017 = seleciona_colunas(matriz2017, 0)
+    musica_2017 = musica_2017[::-1]
     musica_2018 = seleciona_colunas(matriz2018, 0)
+    musica_2018 = musica_2018[::-1]
     musica_2019 = seleciona_colunas(matriz2019, 0)
+    musica_2019 = musica_2019[::-1]
     musica_2020 = seleciona_colunas(matriz2020, 0)
+    musica_2020 = musica_2020[::-1]
     artista_2017 = seleciona_colunas(matriz2017, 1)
+    artista_2017=artista_2017[::-1]
     artista_2018 = seleciona_colunas(matriz2018, 1)
+    artista_2018=artista_2018[::-1]
     artista_2019 = seleciona_colunas(matriz2019, 1)
+    artista_2019=artista_2019[::-1]
     artista_2020 = seleciona_colunas(matriz2020, 1)
+    artista_2020=artista_2020[::-1]
     vizualizacoes_2017 = seleciona_colunas(matriz2017, 2)
+    vizualizacoes_2017 = vizualizacoes_2017[::-1]
     vizualizacoes_2018 = seleciona_colunas(matriz2018, 2)
+    vizualizacoes_2018 = vizualizacoes_2018[::-1]
     vizualizacoes_2019 = seleciona_colunas(matriz2019, 2)
+    vizualizacoes_2019 = vizualizacoes_2019[::-1]
     vizualizacoes_2020 = seleciona_colunas(matriz2020, 2)
+    vizualizacoes_2020 = vizualizacoes_2020[::-1]
     posicao_2017 = seleciona_colunas(matriz2017, 4)
+    posicao_2017 = posicao_2017[::-1]
     posicao_2018 = seleciona_colunas(matriz2018, 4)
+    posicao_2018 = posicao_2018[::-1]
     posicao_2019 = seleciona_colunas(matriz2019, 4)
+    posicao_2019 = posicao_2019[::-1]
     posicao_2020 = seleciona_colunas(matriz2020, 4)
+    posicao_2020 = posicao_2020[::-1]
+
 
 
     # As variável color1 armazena as informações sobre as cores a serem usadas no gráfico. 
@@ -651,9 +668,6 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig1.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
@@ -672,7 +686,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçoes_sertanejo,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
-            marker_line_color = 'rgb(255,255,255)',
+            marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -680,9 +694,6 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig2.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
@@ -701,7 +712,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçoes_pagode,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
-            marker_line_color = 'rgb(255,255,255)',
+            marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -709,9 +720,6 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig3.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
@@ -730,7 +738,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçoes_forro,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
-            marker_line_color = 'rgb(255,255,255)',
+            marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -738,9 +746,6 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig4.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
@@ -759,7 +764,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçoes_funk,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
-            marker_line_color = 'rgb(255,255,255)',
+            marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -767,9 +772,6 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig5.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
@@ -788,7 +790,7 @@ def grafico_lives_estilos_mais_escutados():
             y=visualizaçoes_mpb,         # Determina o dado a ser representado no eixo 'x' do gráfico
             text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
-            marker_line_color = 'rgb(255,255,255)',
+            marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
             opacity=0.9             # Muda a opacidade das barras
         )
@@ -796,14 +798,11 @@ def grafico_lives_estilos_mais_escutados():
 
     # Componentes do layout da página (Título, título dos eixos e botões)
     fig6.update_layout(
-        annotations=[
-            dict(text="Filtro por estilo musical:", showarrow=False,
-            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
         height=600, 
-        title_text="Lives de mpb mais visualizadas:",   # Título do gráfico
+        title_text="Lives de MPB mais visualizadas:",   # Título do gráfico
         
     )
 
@@ -845,28 +844,40 @@ def grafico_mulheres_mais_escutadas():
 
     # Separa cada coluna da matriz
     cantoras2020 = seleciona_colunas(matriz2020,0)
+    
 
     execuçoes2020 = seleciona_colunas(matriz2020,1)
+    
 
     posiçao2020 = seleciona_colunas(matriz2020,2)
+    
 
     cantoras2019 = seleciona_colunas(matriz2019,0)
+    
 
     execuçoes2019 = seleciona_colunas(matriz2019,1)
+    
 
     posiçao2019 = seleciona_colunas(matriz2019,2)
+    
 
     cantoras2018 = seleciona_colunas(matriz2018,0)
+    
 
     execuçoes2018 = seleciona_colunas(matriz2018,1)
 
+
     posiçao2018 = seleciona_colunas(matriz2018,2)
+
 
     cantoras2017 = seleciona_colunas(matriz2017,0)
 
+
     execuçoes2017 = seleciona_colunas(matriz2017,1)
 
+
     posiçao2017 = seleciona_colunas(matriz2017,2)
+
 
     
     # Agora, criamos uma pagina que exibirá o nosso gráfico
@@ -941,7 +952,7 @@ def grafico_mulheres_mais_escutadas():
     fig5 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2020:")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig5.add_trace(go.Scatter(x=cantoras2020, 
+    fig5.add_trace(go.Bar(x=cantoras2020, 
                              y=posiçao2020,
                              name='Ranking De Artistas Femininas Mais Escutadas',
                              marker_line_color= 'rgb(0,0,0)',
@@ -958,7 +969,7 @@ def grafico_mulheres_mais_escutadas():
     fig6 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2019:")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig6.add_trace(go.Scatter(x=cantoras2019, 
+    fig6.add_trace(go.Bar(x=cantoras2019, 
                              y=posiçao2019,
                              name='Ranking De Artistas Femininas Mais Escutadas',
                              marker_line_color= 'rgb(0,0,0)',
@@ -975,7 +986,7 @@ def grafico_mulheres_mais_escutadas():
     fig7 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2018:")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig7.add_trace(go.Scatter(x=cantoras2018, 
+    fig7.add_trace(go.Bar(x=cantoras2018, 
                              y=posiçao2018,
                              name='Ranking De Artistas Femininas Mais Escutadas',
                              marker_line_color= 'rgb(0,0,0)',
@@ -992,7 +1003,7 @@ def grafico_mulheres_mais_escutadas():
     fig8 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2017:")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig8.add_trace(go.Scatter(x=cantoras2017, 
+    fig8.add_trace(go.Bar(x=cantoras2017, 
                              y=posiçao2017,
                              name='Ranking De Artistas Femininas Mais Escutadas',
                              marker_line_color= 'rgb(0,0,0)',
@@ -1006,3 +1017,4 @@ def grafico_mulheres_mais_escutadas():
         height = 600
     )
     return [fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8]
+
