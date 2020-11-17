@@ -38,9 +38,9 @@ app.layout = html.Div([
         dcc.Dropdown(
             id = 'my_dropdown1',
             options = [
-                {'label': 'Número de downloads', "value" : 'Downloads'},
-                {'label': 'Número de usuarios', 'value': 'Usuáriosativospordia'}, 
-                {'label': 'Número de segundos', 'value': 'Tempodeusoemsegundos'}
+                {'label': 'Número de Downloads', "value" : 'Downloads'},
+                {'label': 'Tempo de uso médio em segundos', 'value': 'Tempodeusoemsegundos'}, 
+                {'label': 'Média de usuários ativos por dia', 'value': 'Usuáriosativospordia'}
             ],
             value = 'Downloads',
             multi = False,
@@ -199,10 +199,10 @@ def update_grafico_apps(my_dropdown1):
     if my_dropdown1 == 'Downloads':
         return figs_grafico_apps[0]
 
-    elif my_dropdown1 == 'Usuáriosativospordia':
+    elif my_dropdown1 == 'Tempodeusoemsegundos':
         return figs_grafico_apps[1]
 
-    elif my_dropdown1 == 'Tempodeusoemsegundos':
+    elif my_dropdown1 == 'Usuáriosativospordia':
         return figs_grafico_apps[2]
     
 
