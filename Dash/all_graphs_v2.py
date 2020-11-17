@@ -15,15 +15,18 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-paths= ["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx"] #coloque todos os seus paths em lista aqui
+
+paths= ['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+        ]
         
+
 
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
     '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
@@ -32,6 +35,7 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
     for n in range(len(matriz_de_dados)): # laço de repetição no qual o n assume numeros inteiros de 0 até o tamanho da matriz fornecida(len).
         lista.append(matriz_de_dados[n][número_da_coluna]) # a cada numero int que o n assume é adicionado a lista o objeto de posiçao 'número_da_coluna' da lista de posição n contida na matriz 'matriz_de_dados'.
     return lista # retorna a lista com os dados contidos na coluna informada
+
 
 
 def grafico_apps():
@@ -54,73 +58,138 @@ def grafico_apps():
     colors = ['rgb(50,205,50)', 'rgb(255,0,255)',
               "rgb(0,191,255)", "rgb(25,25,112)", "rgb(0,0,0)"]
 
-    x = nome  # variavel que recebe a lista 'Nome'
-    y = downloads  # variavel que recebe a coluna 'Downloads'
 
     # Cria a página na qual o gráfico será exibido
-    fig = go.Figure()
+    fig1 = go.Figure()
 
     # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
-    fig.add_trace(
+    fig1.add_trace(
         go.Bar(                              # Determina o tipo do gráfico
-            x=x,                             # Determina o dado a ser representado no eixo 'x' do gráfico
-            y=y,                             # Determina o dado a ser representado no eixo 'y' do gráfico   
-            text=y,                          # Determina qual dado o texto sobreposto as barras do gráfico recebem
+            x=nome,                             # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=downloads,                             # Determina o dado a ser representado no eixo 'y' do gráfico   
+            text=downloads,                          # Determina qual dado o texto sobreposto as barras do gráfico recebem
             textposition='auto',             # Determina a posição do texto sobreposto ao gráfico
             marker_color=colors,             # Determina as cores das barras do gráfico
             marker_line_color='rgb(0,0,0)'   # Determina a cor da borda das barras
         )
     )
 
-    fig.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
+    fig1.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Número de Downloads por aplicativo nos últimos 3 meses:',  # Título do gráfico
         #height= 400,
         xaxis_title='Aplicativos',   # Título do eixo 'x'
         yaxis_title='Downloads',     # Título do eixo 'y'
     )
 
-    return fig
+
+
+    # Cria a página na qual o gráfico será exibido
+    fig2 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig2.add_trace(
+        go.Bar(                              # Determina o tipo do gráfico
+            x=nome,                             # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=tempo_de_uso_em_seg,                             # Determina o dado a ser representado no eixo 'y' do gráfico   
+            text=tempo_de_uso_em_seg,                          # Determina qual dado o texto sobreposto as barras do gráfico recebem
+            textposition='auto',             # Determina a posição do texto sobreposto ao gráfico
+            marker_color=colors,             # Determina as cores das barras do gráfico
+            marker_line_color='rgb(0,0,0)'   # Determina a cor da borda das barras
+        )
+    )
+
+    fig2.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
+        title_text='Tempo de uso médio em segundos por aplicativo nos últimos 3 meses:',  # Título do gráfico
+        #height= 400,
+        xaxis_title='Aplicativos',   # Título do eixo 'x'
+        yaxis_title='Tempo de uso médio por usuário em segundos',     # Título do eixo 'y'
+    )
+
+
+
+
+    # Cria a página na qual o gráfico será exibido
+    fig3 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig3.add_trace(
+        go.Bar(                              # Determina o tipo do gráfico
+            x=nome,                             # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=usuarios_ativos_pord,                             # Determina o dado a ser representado no eixo 'y' do gráfico   
+            text=usuarios_ativos_pord,                          # Determina qual dado o texto sobreposto as barras do gráfico recebem
+            textposition='auto',             # Determina a posição do texto sobreposto ao gráfico
+            marker_color=colors,             # Determina as cores das barras do gráfico
+            marker_line_color='rgb(0,0,0)'   # Determina a cor da borda das barras
+        )
+    )
+
+    fig3.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
+        title_text='Número de usuários ativos por dia por aplicativo nos últimos 3 meses:',  # Título do gráfico
+        #height= 400,
+        xaxis_title='Aplicativos',   # Título do eixo 'x'
+        yaxis_title='Usuários ativos por dia',     # Título do eixo 'y'
+    )
+
+    return [fig1, fig2, fig3]
+
 
 
 def grafico_artistas_mais_ouvidos():
-
-    # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
+     # O primeiro passo é armazenar em uma variável (nesse caso a variável path) o local da planilha contendo os dados
     path = all_paths(paths, 1)
 
     # Depois criamos um dataframe foi criado com as informações da planilha
     df = pd.read_excel(path)
 
     # Cria uma matriz com todas as linhas do dataframe em formato de lista
-    matriz = df.values.tolist()   
+    matriz = df.values.tolist() 
+    matriz2017 =[] 
+    matriz2018 =[] 
+    matriz2019 =[] 
+    matriz2020 =[] 
+
+    for n in range(len(matriz)):
+
+        if matriz[n][3] == 2017:
+            matriz2017.append(matriz[n])
+
+        elif matriz[n][3] == 2018:
+            matriz2018.append(matriz[n])
+
+        elif matriz[n][3] == 2019:
+            matriz2019.append(matriz[n])
+
+        elif matriz[n][3] == 2020:
+            matriz2020.append(matriz[n])   
 
 
     # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
-    musica_2017 = seleciona_colunas(matriz, 0)
-    musica_2018 = seleciona_colunas(matriz, 5)
-    musica_2019 = seleciona_colunas(matriz, 10)
-    musica_2020 = seleciona_colunas(matriz, 15)
-    artista_2017 = seleciona_colunas(matriz, 1)
-    artista_2018 = seleciona_colunas(matriz, 6)
-    artista_2019 = seleciona_colunas(matriz, 11)
-    artista_2020 = seleciona_colunas(matriz, 16)
-    vizualizacoes_2017 = seleciona_colunas(matriz, 2)
-    vizualizacoes_2018 = seleciona_colunas(matriz, 7)
-    vizualizacoes_2019 = seleciona_colunas(matriz, 12)
-    vizualizacoes_2020 = seleciona_colunas(matriz, 17)
-    posicao_2017 = seleciona_colunas(matriz, 4)
-    posicao_2018 = seleciona_colunas(matriz, 9)
-    posicao_2019 = seleciona_colunas(matriz, 14)
-    posicao_2020 = seleciona_colunas(matriz, 19)
+    musica_2017 = seleciona_colunas(matriz2017, 0)
+    musica_2018 = seleciona_colunas(matriz2018, 0)
+    musica_2019 = seleciona_colunas(matriz2019, 0)
+    musica_2020 = seleciona_colunas(matriz2020, 0)
+    artista_2017 = seleciona_colunas(matriz2017, 1)
+    artista_2018 = seleciona_colunas(matriz2018, 1)
+    artista_2019 = seleciona_colunas(matriz2019, 1)
+    artista_2020 = seleciona_colunas(matriz2020, 1)
+    vizualizacoes_2017 = seleciona_colunas(matriz2017, 2)
+    vizualizacoes_2018 = seleciona_colunas(matriz2018, 2)
+    vizualizacoes_2019 = seleciona_colunas(matriz2019, 2)
+    vizualizacoes_2020 = seleciona_colunas(matriz2020, 2)
+    posicao_2017 = seleciona_colunas(matriz2017, 4)
+    posicao_2018 = seleciona_colunas(matriz2018, 4)
+    posicao_2019 = seleciona_colunas(matriz2019, 4)
+    posicao_2020 = seleciona_colunas(matriz2020, 4)
 
 
     # As variável color1 armazena as informações sobre as cores a serem usadas no gráfico. 
     color1 = ['rgb(106,90,205)','rgb(131,111,255)','rgb(105,89,205)','rgb(72,61,139)','rgb(25,25,112)','rgb(0,0,128)','rgb(0,0,139)','rgb(0,0,205)','rgb(0,0,255)','rgb(100,149,237)']   
     
-    # Agora, criamos uma pagina que exibirá o nosso gráfico
-    fig = go.Figure()
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 1
+    fig1 = go.Figure()
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig.add_trace(
+    fig1.add_trace(
         go.Bar(
             x=musica_2017, 
             y=vizualizacoes_2017, 
@@ -132,14 +201,177 @@ def grafico_artistas_mais_ouvidos():
 
 
     # Aqui adicionamos os componentes do layout da pagina.
-    fig.update_layout(
-        title_text="Músicas mais vizualizadas em 2017:",
+    fig1.update_layout(
+        title_text="Músicas mais visualizadas em 2017:",
         height=600,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
-                        
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 2
+    fig2 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig2.add_trace(
+        go.Bar(
+            x=musica_2018, 
+            y=vizualizacoes_2018, 
+            name='2018/Music Views', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
     )
-    return fig
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig2.update_layout(
+        title_text="Músicas mais visualizadas em 2018:",
+        height=600,
+        xaxis_title = 'Músicas',
+        yaxis_title = 'Número de Visualizações',
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 3
+    fig3 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig3.add_trace(
+        go.Bar(
+            x=musica_2019, 
+            y=vizualizacoes_2019, 
+            name='2019/Music Views', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina. 
+    fig3.update_layout(
+        title_text="Músicas mais visualizadas em 2019:",
+        height=600,
+        xaxis_title = 'Músicas',
+        yaxis_title = 'Número de Visualizações',
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 4
+    fig4 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig4.add_trace(
+        go.Bar(
+            x=musica_2020, 
+            y=vizualizacoes_2020, 
+            name='2020/Music Views', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig4.update_layout(
+        title_text="Músicas mais visualizadas em 2020:",
+        height=600,
+        xaxis_title = 'Músicas',
+        yaxis_title = 'Número de Visualizações',
+        )
+
+    
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 5
+    fig5 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig5.add_trace(
+        go.Bar(
+            x=artista_2017, 
+            y=posicao_2017, 
+            name='2017/Artistas', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig5.update_layout(
+        title_text="Artistas mais escutados em 2017:",
+        height=600,
+        xaxis_title = 'Artista',
+        yaxis_title = 'Posição',
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 6
+    fig6 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig6.add_trace(
+        go.Bar(
+            x=artista_2018, 
+            y=posicao_2018, 
+            name='2018/Artistas', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig6.update_layout(
+        title_text="Artistas mais escutados em 2018:",
+        height=600,
+        xaxis_title = 'Artista',
+        yaxis_title = 'Posição',
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 7
+    fig7 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig7.add_trace(
+        go.Bar(
+            x=artista_2019, 
+            y=posicao_2019, 
+            name='2019/Artistas', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig7.update_layout(
+        title_text="Artistas mais escutados em 2019:",
+        height=600,
+        xaxis_title = 'Artista',
+        yaxis_title = 'Posição',
+        )
+
+    # Agora, criamos uma pagina que exibirá o nosso gráfico 8
+    fig8 = go.Figure()
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig8.add_trace(
+        go.Bar(
+            x=artista_2020, 
+            y=posicao_2020, 
+            name='2020/Artistas', 
+            marker_color = color1,
+            marker_line_color= 'rgb(0,0,0)'
+        )
+    )
+
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig8.update_layout(
+        title_text="Artistas mais escutados em 2020:",
+        height=600,
+        xaxis_title = 'Artista',
+        yaxis_title = 'Posição',
+        )
+    
+    return [fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8]
+
 
 
 def grafico_artistas_mais_relevantes():
@@ -197,17 +429,21 @@ def grafico_artistas_mais_relevantes():
     xaxis_title = "Artistas",               # Muda o título do eixo x
     yaxis_title = "Posição no ranking",     # Muda o título do eixo y
     xaxis=dict(                             # Altera as propriedades do eixo x
-
-        range=([-1,20]),                    # Determina o quanto do gráfico será mostrado inicialmente
-                                            # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
+        range=([-1,20]),
         rangeslider=dict(                   # Adiciona o Slider
             visible=True,                   # Torna o slider visível
         ),
         type="category"                     # Diz o tipo do slider (nesse caso é "category", pois se trata de números)
         )
     ) 
+               
+    #fig['layout']['xaxis'].update(range=([-1,20])) # Determina o quanto do gráfico será mostrado inicialmente
+                                                   # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
+         
+    
               
     return fig
+
 
 
 def grafico_generos_mais_ouvidos():
@@ -254,11 +490,42 @@ def grafico_generos_mais_ouvidos():
     fig.update_layout(     # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Gêneros musicais mais escutados por ano:',  # Título do gráfico
         height = 600,
-        
+        updatemenus=[       # Adiciona botões no layout
+            dict(
+                type="buttons",
+                direction="right",      # Posição dos botões na página
+                x=0.76,                  # Muda a posição dos botões horizontalmente
+                y=1.1,                  # Muda a posição dos botões verticalmente
+                showactive=True,        # Mostra qual botão está ativo
+                buttons=list(
+                    [
+                        dict(                  # Determina o que o botão altera
+                            label="2018",      # Título do botão
+                            method="update",                            
+                            args=[{"values": [porcentagem2018],   # Argumentos e dados a serem alterados
+                                "labels": [genero2018]}],
+                        ),
+                        dict(
+                            label="2019",
+                            method="update",
+                            args=[{"values": [porcentagem2019],
+                                "labels": [genero2019]}],
+                        ),
+                        dict(
+                            label="2020",
+                            method="update",
+                            args=[{"values": [porcentagem2020],
+                                "labels": [genero2020]}],
+                        )
+                    ]
+                ),
+            )
+        ]
     )
 
 
     return fig
+
 
 
 def grafico_lives_artistas_mais_escutados():
@@ -308,6 +575,7 @@ def grafico_lives_artistas_mais_escutados():
     )
 
     return fig
+
 
 
 def grafico_lives_estilos_mais_escutados():
@@ -365,10 +633,10 @@ def grafico_lives_estilos_mais_escutados():
 
 
     # Cria a página na qual o gráfico será exibido
-    fig = go.Figure()
+    fig1 = go.Figure()
 
     # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
-    fig.add_trace(
+    fig1.add_trace(
         go.Bar(                     # Determina o tipo do gráfico
             
             x=estilos,              # Determina o dado a ser representado no eixo 'x' do gráfico
@@ -382,7 +650,7 @@ def grafico_lives_estilos_mais_escutados():
     )
 
     # Componentes do layout da página (Título, título dos eixos e botões)
-    fig.update_layout(
+    fig1.update_layout(
         annotations=[
             dict(text="Filtro por estilo musical:", showarrow=False,
             x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
@@ -394,9 +662,155 @@ def grafico_lives_estilos_mais_escutados():
         
     )
 
+    fig2 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig2.add_trace(
+        go.Bar(                     # Determina o tipo do gráfico
+            
+            x=cantores_sertanejo,              # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualizaçoes_sertanejo,         # Determina o dado a ser representado no eixo 'x' do gráfico
+            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
+            marker_color=colors,    # Determina as cores das barras do gráfico
+            opacity=0.9             # Muda a opacidade das barras
+        )
+    )
+
+    # Componentes do layout da página (Título, título dos eixos e botões)
+    fig2.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
+
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Artista',                                      # Título do eixo 'x'
+        height=600, 
+        title_text="Lives de setanejo mais visualizadas:",   # Título do gráfico
+        
+    )
+
+    fig3 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig3.add_trace(
+        go.Bar(                     # Determina o tipo do gráfico
+            
+            x=cantores_pagode,              # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualizaçoes_pagode,         # Determina o dado a ser representado no eixo 'x' do gráfico
+            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
+            marker_color=colors,    # Determina as cores das barras do gráfico
+            opacity=0.9             # Muda a opacidade das barras
+        )
+    )
+
+    # Componentes do layout da página (Título, título dos eixos e botões)
+    fig3.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
+
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Artista',                                      # Título do eixo 'x'
+        height=600, 
+        title_text="Lives de pagode mais visualizadas:",   # Título do gráfico
+        
+    )
+
+    fig4 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig4.add_trace(
+        go.Bar(                     # Determina o tipo do gráfico
+            
+            x=cantores_forro,              # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualizaçoes_forro,         # Determina o dado a ser representado no eixo 'x' do gráfico
+            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
+            marker_color=colors,    # Determina as cores das barras do gráfico
+            opacity=0.9             # Muda a opacidade das barras
+        )
+    )
+
+    # Componentes do layout da página (Título, título dos eixos e botões)
+    fig4.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
+
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Artista',                                      # Título do eixo 'x'
+        height=600, 
+        title_text="Lives de forró mais visualizadas:",   # Título do gráfico
+        
+    )
+
+    fig5 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig5.add_trace(
+        go.Bar(                     # Determina o tipo do gráfico
+            
+            x=cantores_funk,              # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualizaçoes_funk,         # Determina o dado a ser representado no eixo 'x' do gráfico
+            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
+            marker_color=colors,    # Determina as cores das barras do gráfico
+            opacity=0.9             # Muda a opacidade das barras
+        )
+    )
+
+    # Componentes do layout da página (Título, título dos eixos e botões)
+    fig5.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
+
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Artista',                                      # Título do eixo 'x'
+        height=600, 
+        title_text="Lives de funk mais visualizadas:",   # Título do gráfico
+        
+    )
+
+    fig6 = go.Figure()
+
+    # Componentes do gráfico principal (tipo de gráfico, dados da planilha que serão usados, etc.)
+    fig6.add_trace(
+        go.Bar(                     # Determina o tipo do gráfico
+            
+            x=cantores_mpb,              # Determina o dado a ser representado no eixo 'x' do gráfico
+            y=visualizaçoes_mpb,         # Determina o dado a ser representado no eixo 'x' do gráfico
+            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
+            marker_line_color = 'rgb(255,255,255)',
+            marker_color=colors,    # Determina as cores das barras do gráfico
+            opacity=0.9             # Muda a opacidade das barras
+        )
+    )
+
+    # Componentes do layout da página (Título, título dos eixos e botões)
+    fig6.update_layout(
+        annotations=[
+            dict(text="Filtro por estilo musical:", showarrow=False,
+            x=3.6, y=1.1, yref="paper", align="left",xanchor='right',yanchor='top')],
+
+        yaxis_title='Visualização',                                 # Título do eixo 'y'
+        xaxis_title='Artista',                                      # Título do eixo 'x'
+        height=600, 
+        title_text="Lives de mpb mais visualizadas:",   # Título do gráfico
+        
+    )
 
 
-    return fig
+
+    return [fig1,fig2,fig3,fig4,fig5,fig6]
+
 
 
 def grafico_mulheres_mais_escutadas():
@@ -409,38 +823,57 @@ def grafico_mulheres_mais_escutadas():
 
     # Transforma o dataframe em uma matriz
     matriz = df.values.tolist()
+    matriz2017 =[] 
+    matriz2018 =[] 
+    matriz2019 =[] 
+    matriz2020 =[] 
+
+
+    for n in range(len(matriz)):
+
+        if matriz[n][3] == 2017:
+            matriz2017.append(matriz[n])
+
+        elif matriz[n][3] == 2018:
+            matriz2018.append(matriz[n])
+
+        elif matriz[n][3] == 2019:
+            matriz2019.append(matriz[n])
+
+        elif matriz[n][3] == 2020:
+            matriz2020.append(matriz[n])
 
     # Separa cada coluna da matriz
-    cantoras2020 = seleciona_colunas(matriz,0)
+    cantoras2020 = seleciona_colunas(matriz2020,0)
 
-    execuçoes2020 = seleciona_colunas(matriz,1)
+    execuçoes2020 = seleciona_colunas(matriz2020,1)
 
-    posiçao2020 = seleciona_colunas(matriz,2)
+    posiçao2020 = seleciona_colunas(matriz2020,2)
 
-    cantoras2019 = seleciona_colunas(matriz,3)
+    cantoras2019 = seleciona_colunas(matriz2019,0)
 
-    execuçoes2019 = seleciona_colunas(matriz,4)
+    execuçoes2019 = seleciona_colunas(matriz2019,1)
 
-    posiçao2019 = seleciona_colunas(matriz,5)
+    posiçao2019 = seleciona_colunas(matriz2019,2)
 
-    cantoras2018 = seleciona_colunas(matriz,6)
+    cantoras2018 = seleciona_colunas(matriz2018,0)
 
-    execuçoes2018 = seleciona_colunas(matriz,7)
+    execuçoes2018 = seleciona_colunas(matriz2018,1)
 
-    posiçao2018 = seleciona_colunas(matriz,8)
+    posiçao2018 = seleciona_colunas(matriz2018,2)
 
-    cantoras2017 = seleciona_colunas(matriz,9)
+    cantoras2017 = seleciona_colunas(matriz2017,0)
 
-    execuçoes2017 = seleciona_colunas(matriz,10)
+    execuçoes2017 = seleciona_colunas(matriz2017,1)
 
-    posiçao2017 = seleciona_colunas(matriz,11)
+    posiçao2017 = seleciona_colunas(matriz2017,2)
 
     
     # Agora, criamos uma pagina que exibirá o nosso gráfico
-    fig = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas 2020:")
+    fig1 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2020:")
 
     # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
-    fig.add_trace(go.Scatter(x=cantoras2020, 
+    fig1.add_trace(go.Scatter(x=cantoras2020, 
                              y=execuçoes2020,
                              name='Artistas Femininas Mais Escutadas',
                              marker_line_color= 'rgb(0,0,0)',
@@ -448,12 +881,128 @@ def grafico_mulheres_mais_escutadas():
     
 
     # Aqui adicionamos os componentes do layout da pagina.
-    fig.update_layout(
+    fig1.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-        height = 600,
-        # Aqui começaremos a adicionar os botões ao layout.
+        height = 600
     )
-                 
 
-    return fig
+    fig2 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2019:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig2.add_trace(go.Scatter(x=cantoras2019, 
+                             y=execuçoes2019,
+                             name='Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig2.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig3 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2018:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig3.add_trace(go.Scatter(x=cantoras2018, 
+                             y=execuçoes2018,
+                             name='Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig3.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig4 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2017:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig4.add_trace(go.Scatter(x=cantoras2017, 
+                             y=execuçoes2017,
+                             name='Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig4.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig5 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2020:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig5.add_trace(go.Scatter(x=cantoras2020, 
+                             y=posiçao2020,
+                             name='Ranking De Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig5.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Posição",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig6 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2019:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig6.add_trace(go.Scatter(x=cantoras2019, 
+                             y=posiçao2019,
+                             name='Ranking De Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig6.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Posição",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig7 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2018:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig7.add_trace(go.Scatter(x=cantoras2018, 
+                             y=posiçao2018,
+                             name='Ranking De Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig7.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Posição",    # Adiciona um título ao eixo y
+        height = 600
+    )
+
+    fig8 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2017:")
+
+    # Aqui definimos os componentes (tipo, eixos, nome e cor) do gráfico principal.
+    fig8.add_trace(go.Scatter(x=cantoras2017, 
+                             y=posiçao2017,
+                             name='Ranking De Artistas Femininas Mais Escutadas',
+                             marker_line_color= 'rgb(0,0,0)',
+                             marker_color='rgb(255, 0, 246)'))
+    
+
+    # Aqui adicionamos os componentes do layout da pagina.
+    fig8.update_layout(
+        xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
+        yaxis_title= "Posição",    # Adiciona um título ao eixo y
+        height = 600
+    )
+    return [fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8]

@@ -15,8 +15,15 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-paths= [""] #coloque todos os seus paths em lista aqui
-        
+paths= ['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/Artistas_Mais_Ouvidos(atualizado).xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+        ]
 
 
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
@@ -132,26 +139,44 @@ def grafico_artistas_mais_ouvidos():
     df = pd.read_excel(path)
 
     # Cria uma matriz com todas as linhas do dataframe em formato de lista
-    matriz = df.values.tolist()   
+    matriz = df.values.tolist() 
+    matriz2017 =[] 
+    matriz2018 =[] 
+    matriz2019 =[] 
+    matriz2020 =[] 
+
+    for n in range(len(matriz)):
+
+        if matriz[n][3] == 2017:
+            matriz2017.append(matriz[n])
+
+        elif matriz[n][3] == 2018:
+            matriz2018.append(matriz[n])
+
+        elif matriz[n][3] == 2019:
+            matriz2019.append(matriz[n])
+
+        elif matriz[n][3] == 2020:
+            matriz2020.append(matriz[n])   
 
 
     # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
-    musica_2017 = seleciona_colunas(matriz, 0)
-    musica_2018 = seleciona_colunas(matriz, 5)
-    musica_2019 = seleciona_colunas(matriz, 10)
-    musica_2020 = seleciona_colunas(matriz, 15)
-    artista_2017 = seleciona_colunas(matriz, 1)
-    artista_2018 = seleciona_colunas(matriz, 6)
-    artista_2019 = seleciona_colunas(matriz, 11)
-    artista_2020 = seleciona_colunas(matriz, 16)
-    vizualizacoes_2017 = seleciona_colunas(matriz, 2)
-    vizualizacoes_2018 = seleciona_colunas(matriz, 7)
-    vizualizacoes_2019 = seleciona_colunas(matriz, 12)
-    vizualizacoes_2020 = seleciona_colunas(matriz, 17)
-    posicao_2017 = seleciona_colunas(matriz, 4)
-    posicao_2018 = seleciona_colunas(matriz, 9)
-    posicao_2019 = seleciona_colunas(matriz, 14)
-    posicao_2020 = seleciona_colunas(matriz, 19)
+    musica_2017 = seleciona_colunas(matriz2017, 0)
+    musica_2018 = seleciona_colunas(matriz2018, 0)
+    musica_2019 = seleciona_colunas(matriz2019, 0)
+    musica_2020 = seleciona_colunas(matriz2020, 0)
+    artista_2017 = seleciona_colunas(matriz2017, 1)
+    artista_2018 = seleciona_colunas(matriz2018, 1)
+    artista_2019 = seleciona_colunas(matriz2019, 1)
+    artista_2020 = seleciona_colunas(matriz2020, 1)
+    vizualizacoes_2017 = seleciona_colunas(matriz2017, 2)
+    vizualizacoes_2018 = seleciona_colunas(matriz2018, 2)
+    vizualizacoes_2019 = seleciona_colunas(matriz2019, 2)
+    vizualizacoes_2020 = seleciona_colunas(matriz2020, 2)
+    posicao_2017 = seleciona_colunas(matriz2017, 4)
+    posicao_2018 = seleciona_colunas(matriz2018, 4)
+    posicao_2019 = seleciona_colunas(matriz2019, 4)
+    posicao_2020 = seleciona_colunas(matriz2020, 4)
 
 
     # As variável color1 armazena as informações sobre as cores a serem usadas no gráfico. 
@@ -380,15 +405,17 @@ def grafico_artistas_mais_relevantes():
     xaxis_title = "Artistas",               # Muda o título do eixo x
     yaxis_title = "Posição no ranking",     # Muda o título do eixo y
     xaxis=dict(                             # Altera as propriedades do eixo x
-
-        range=([1,20]),                     # Determina o quanto do gráfico será mostrado inicialmente
-                                            # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
+        range=([-1,20]),
         rangeslider=dict(                   # Adiciona o Slider
             visible=True,                   # Torna o slider visível
         ),
         type="category"                     # Diz o tipo do slider (nesse caso é "category", pois se trata de números)
         )
     ) 
+               
+    #fig['layout']['xaxis'].update(range=([-1,20])) # Determina o quanto do gráfico será mostrado inicialmente
+                                                   # OBS.: O range começa em -1 para não cortar a barra inicial ao meio (bug)
+         
     
               
     return fig
@@ -745,31 +772,50 @@ def grafico_mulheres_mais_escutadas():
 
     # Transforma o dataframe em uma matriz
     matriz = df.values.tolist()
+    matriz2017 =[] 
+    matriz2018 =[] 
+    matriz2019 =[] 
+    matriz2020 =[] 
+
+
+    for n in range(len(matriz)):
+
+        if matriz[n][3] == 2017:
+            matriz2017.append(matriz[n])
+
+        elif matriz[n][3] == 2018:
+            matriz2018.append(matriz[n])
+
+        elif matriz[n][3] == 2019:
+            matriz2019.append(matriz[n])
+
+        elif matriz[n][3] == 2020:
+            matriz2020.append(matriz[n])
 
     # Separa cada coluna da matriz
-    cantoras2020 = seleciona_colunas(matriz,0)
+    cantoras2020 = seleciona_colunas(matriz2020,0)
 
-    execuçoes2020 = seleciona_colunas(matriz,1)
+    execuçoes2020 = seleciona_colunas(matriz2020,1)
 
-    posiçao2020 = seleciona_colunas(matriz,2)
+    posiçao2020 = seleciona_colunas(matriz2020,2)
 
-    cantoras2019 = seleciona_colunas(matriz,3)
+    cantoras2019 = seleciona_colunas(matriz2019,0)
 
-    execuçoes2019 = seleciona_colunas(matriz,4)
+    execuçoes2019 = seleciona_colunas(matriz2019,1)
 
-    posiçao2019 = seleciona_colunas(matriz,5)
+    posiçao2019 = seleciona_colunas(matriz2019,2)
 
-    cantoras2018 = seleciona_colunas(matriz,6)
+    cantoras2018 = seleciona_colunas(matriz2018,0)
 
-    execuçoes2018 = seleciona_colunas(matriz,7)
+    execuçoes2018 = seleciona_colunas(matriz2018,1)
 
-    posiçao2018 = seleciona_colunas(matriz,8)
+    posiçao2018 = seleciona_colunas(matriz2018,2)
 
-    cantoras2017 = seleciona_colunas(matriz,9)
+    cantoras2017 = seleciona_colunas(matriz2017,0)
 
-    execuçoes2017 = seleciona_colunas(matriz,10)
+    execuçoes2017 = seleciona_colunas(matriz2017,1)
 
-    posiçao2017 = seleciona_colunas(matriz,11)
+    posiçao2017 = seleciona_colunas(matriz2017,2)
 
     
     # Agora, criamos uma pagina que exibirá o nosso gráfico
@@ -809,7 +855,12 @@ def grafico_mulheres_mais_escutadas():
                                 "type":['line']}, 
                                 {'title':'Artistas Femininas Mais Escutadas 2020:',
                                 'xaxis':{'title': 'Artistas'},
-                                'yaxis':{'title': 'Visualizações'}}]) ,
+                                'yaxis':{'title': 'Visualizações'},
+                                'annotations':[dict(text="Número de visualizações por artista:", showarrow=False,
+                                                    x=6.1, y=1.11, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Ranking artistas femininas mais escutadas em:", showarrow=False,
+                                                    x=8.9, y=1.11, yref="paper", align="left", xanchor='right',yanchor='top')]}]                              
+                                ),
 
                         # Terceiro botão
                         dict(label="2019", method="update",
@@ -818,7 +869,12 @@ def grafico_mulheres_mais_escutadas():
                                 "type":['line']},
                                 {'title':'Artistas Femininas Mais Escutadas 2019:',
                                 'xaxis':{'title': 'Artistas'},
-                                'yaxis':{'title': 'Visualizações'}}]) ,
+                                'yaxis':{'title': 'Visualizações'},
+                                'annotations':[dict(text="Número de visualizações por artista:", showarrow=False,
+                                                    x=6.1, y=1.12, yref="paper", align="left", xanchor='right',yanchor='top'),
+                                               dict(text="Ranking artistas femininas mais escutadas em:", showarrow=False,
+                                                    x=8.9, y=1.12, yref="paper", align="left", xanchor='right',yanchor='top')]}]
+                                ) ,
 
                         # Quinto botão
                         dict(label="2018", method="update",
