@@ -16,14 +16,14 @@ def all_paths(lista_de_paths, numero_do_path):
 
 
 
-paths= ['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+paths= ["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx",
         ]
         
 
@@ -684,7 +684,7 @@ def grafico_lives_estilos_mais_escutados():
             
             x=cantores_sertanejo,              # Determina o dado a ser representado no eixo 'x' do gráfico
             y=visualizaçoes_sertanejo,         # Determina o dado a ser representado no eixo 'x' do gráfico
-            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            text=cantores_sertanejo,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
             marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
@@ -710,7 +710,7 @@ def grafico_lives_estilos_mais_escutados():
             
             x=cantores_pagode,              # Determina o dado a ser representado no eixo 'x' do gráfico
             y=visualizaçoes_pagode,         # Determina o dado a ser representado no eixo 'x' do gráfico
-            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            text=cantores_pagode,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
             marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
@@ -736,7 +736,7 @@ def grafico_lives_estilos_mais_escutados():
             
             x=cantores_forro,              # Determina o dado a ser representado no eixo 'x' do gráfico
             y=visualizaçoes_forro,         # Determina o dado a ser representado no eixo 'x' do gráfico
-            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            text=cantores_forro,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
             marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
@@ -762,7 +762,7 @@ def grafico_lives_estilos_mais_escutados():
             
             x=cantores_funk,              # Determina o dado a ser representado no eixo 'x' do gráfico
             y=visualizaçoes_funk,         # Determina o dado a ser representado no eixo 'x' do gráfico
-            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            text=cantores_funk,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
             marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
@@ -788,7 +788,7 @@ def grafico_lives_estilos_mais_escutados():
             
             x=cantores_mpb,              # Determina o dado a ser representado no eixo 'x' do gráfico
             y=visualizaçoes_mpb,         # Determina o dado a ser representado no eixo 'x' do gráfico
-            text=nomes,             # Cria o parâmetro texto (Será usado logo abaixo)
+            text=cantores_mpb,             # Cria o parâmetro texto (Será usado logo abaixo)
             hoverinfo='text+y',     # Informações que serão mostradas ao passar o mouse por cima
             marker_line_color = 'rgb(0,0,0)',
             marker_color=colors,    # Determina as cores das barras do gráfico
