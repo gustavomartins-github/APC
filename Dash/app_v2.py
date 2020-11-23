@@ -45,9 +45,8 @@ app.layout = html.Div([
             value = 'Downloads',
             multi = False,
             clearable = False,
-            style = {'width': '52%'}
     )
-    ], style={'marginTop': 100}),
+    ], style={'marginTop': 100,'width': '20%'}),
 
 
     html.Div([
@@ -70,9 +69,8 @@ app.layout = html.Div([
             value = 'views1',
             multi = False,
             clearable = False,
-            style = {'width': '52%'}
     )
-    ], style={'marginTop': 180}),
+    ], style={'marginTop': 180,'width': '6%'}),
 
     html.Div([
         dcc.RadioItems(
@@ -138,9 +136,8 @@ app.layout = html.Div([
             value = 'Total',
             multi = False,
             clearable = False,
-            style = {'width': '52%'}
     )
-    ], style={'marginTop': 180}),
+    ], style={'marginTop': 180, 'width': '10%'} ),
 
 
     html.Div([
@@ -164,9 +161,8 @@ app.layout = html.Div([
             value = 'visu1',
             multi = False,
             clearable = False,
-            style = {'width': '52%'}
     )
-    ], style={'marginTop': 180}),
+    ], style={'marginTop': 180,'width': '6%'}),
 
     html.Div([
         dcc.RadioItems(
@@ -177,7 +173,8 @@ app.layout = html.Div([
             ],
             value='botão_visu',
     )
-    ],style={'marginTop': 5}),
+    ],
+    style={'marginTop': 5}),
 
     html.Div([
         dcc.Graph(
