@@ -44,7 +44,7 @@ def grafico_apps():
     path = all_paths(paths, 0)
 
     df = pd.read_excel(path)   # Cria um dataframe com as informações da planilha
-    matriz = df.values.tolist()   # Cria uma matriz com todas as linhas do dataframe em formato de lista
+    matriz = df.values.tolist()  # Cria uma matriz com todas as linhas do dataframe em formato de lista
 
     # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
     nome = seleciona_colunas(matriz, 0) 
@@ -1017,4 +1017,3 @@ def grafico_mulheres_mais_escutadas():
         height = 600
     )
     return [fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8]
-
