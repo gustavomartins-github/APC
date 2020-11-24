@@ -273,27 +273,27 @@ def update_grafico_artistas_mais_ouvidos(my_dropdown2, my_radio_items):
 def update_grafico_mulheres_mais_escutadas(my_dropdown4, my_radio_items2):
     if my_dropdown4 == 'visu1':
         if my_radio_items2 == 'botão_visu':
-            return figs_grafico_mulheres_mais_escutadas[0]
+            return figs_grafico_mulheres_mais_escutadas[3]
         else: 
-            return figs_grafico_mulheres_mais_escutadas[4]
+            return figs_grafico_mulheres_mais_escutadas[7]
 
     if my_dropdown4 == 'visu2':
-        if my_radio_items2 == 'botão_visu':
-            return figs_grafico_mulheres_mais_escutadas[1]
-        else: 
-            return figs_grafico_mulheres_mais_escutadas[5]
-
-    if my_dropdown4 == 'visu3':
         if my_radio_items2 == 'botão_visu':
             return figs_grafico_mulheres_mais_escutadas[2]
         else: 
             return figs_grafico_mulheres_mais_escutadas[6]
+
+    if my_dropdown4 == 'visu3':
+        if my_radio_items2 == 'botão_visu':
+            return figs_grafico_mulheres_mais_escutadas[1]
+        else: 
+            return figs_grafico_mulheres_mais_escutadas[5]
     
     if my_dropdown4 == 'visu4':
         if my_radio_items2 == 'botão_visu':
-            return figs_grafico_mulheres_mais_escutadas[3]
+            return figs_grafico_mulheres_mais_escutadas[0]
         else: 
-            return figs_grafico_mulheres_mais_escutadas[7]
+            return figs_grafico_mulheres_mais_escutadas[4]
 
 
 
