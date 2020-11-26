@@ -25,10 +25,11 @@ paths= ["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
         "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
         "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx",
         ]
+    
         
 
-
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
+    
     '''Cria uma lista com a coluna que possui os dados que voce deseja trabalhar (recebe 
     como parametros a matriz de dados e o numero da coluna a ser utilizada).'''
     lista = []    # Cria uma lista vazia
@@ -37,8 +38,8 @@ def seleciona_colunas(matriz_de_dados, número_da_coluna):
     return lista # retorna a lista com os dados contidos na coluna informada
 
 
-
 def grafico_apps():
+
 
     # Especifica o caminho do computador até a planilha do gráfico
     path = all_paths(paths, 0)
@@ -46,8 +47,9 @@ def grafico_apps():
     df = pd.read_excel(path)   # Cria um dataframe com as informações da planilha
     matriz = df.values.tolist()  # Cria uma matriz com todas as linhas do dataframe em formato de lista
 
+
     # São criadas listas para receberem os dados através da função 'seleciona_colunas' criada no topo.
-    nome = seleciona_colunas(matriz, 0) 
+    nome = seleciona_colunas(matriz, 0)
     downloads = seleciona_colunas(matriz, 1)
     usuarios_ativos_pord = seleciona_colunas(matriz, 2)
     tempo_de_uso_em_seg = seleciona_colunas(matriz, 3)
@@ -131,7 +133,6 @@ def grafico_apps():
     )
 
     return [fig1, fig2, fig3]
-
 
 
 def grafico_artistas_mais_ouvidos():
@@ -670,7 +671,7 @@ def grafico_lives_estilos_mais_escutados():
     fig1.update_layout(
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
-        xaxis_title='Artista',                                      # Título do eixo 'x'
+        xaxis_title='Estilo Musical',                                      # Título do eixo 'x'
         height=600, 
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         
@@ -1017,3 +1018,4 @@ def grafico_mulheres_mais_escutadas():
         height = 600
     )
     return [fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8]
+
