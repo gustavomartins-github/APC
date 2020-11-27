@@ -1,12 +1,17 @@
+html{
+    width: 100%;
+}
+
+
 .banner {
     height: 75px;
     margin: 0px -10px 10px;
-    background-color: rgb(255,255,255);
+    background-color: rgb(3, 16, 33);
     border-radius: 2px;
 }
 
 .banner h2{
-    color: white;
+    color: rgb(3, 16, 33);
     padding-top: 10px;
     margin-left: 2%;
     display: inline-block;
@@ -18,3 +23,23 @@
     right: -20px;
     height: 75px;
 }
+
+  
+#my_radio_items2{
+    color: white;
+    flex: 2;
+  }
+
+#my_radio_items{
+    color: white;
+    flex: 2;
+  }
+  
+#my_radio_items2 > div {
+    display: flex;
+  }
+
+#text1{
+    color: white;
+}
+
