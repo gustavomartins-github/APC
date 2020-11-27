@@ -24,9 +24,7 @@ figs_grafico_mulheres_mais_escutadas = graficos.grafico_mulheres_mais_escutadas(
 logo = html.Div([
     html.Div([
         html.Img(src="/assets/logo-dash.svg")
-    ], className='banner'),
-
-    #html.H1(id= 'title1', children='DashMusic', style={'marginTop': 30}),
+    ], className='banner', style={'marginTop': 15}),
 
     html.H5(id= 'text1',style={'marginTop': 30}, children='''
         Um dashboard feito por alunos da FGA da Universidade de Brasília.
@@ -62,7 +60,7 @@ card1 = dbc.Card(
             ]
         )     
     ],
-    style={"width": "100%","position":"center", 'marginTop':30},color="dark",
+    style={"width": "100%","position":"center", 'marginTop':50},color="dark",
 )
 
 
@@ -259,8 +257,6 @@ card7 = dbc.Card(
 # A partir daqui temos as rows
 row0 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(logo),
@@ -278,8 +274,6 @@ row0 = html.Div(
 
 row1 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card1),
@@ -298,8 +292,6 @@ row1 = html.Div(
 
 row2 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card2),
@@ -308,7 +300,6 @@ row2 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
@@ -317,8 +308,6 @@ row2 = html.Div(
 
 row3 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card3),
@@ -327,7 +316,6 @@ row3 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
@@ -336,8 +324,6 @@ row3 = html.Div(
 
 row4 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card4),
@@ -346,7 +332,6 @@ row4 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
@@ -355,8 +340,6 @@ row4 = html.Div(
 
 row5 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card5),
@@ -365,7 +348,6 @@ row5 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
@@ -374,8 +356,6 @@ row5 = html.Div(
 
 row6 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card6),
@@ -384,7 +364,6 @@ row6 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
@@ -393,8 +372,6 @@ row6 = html.Div(
 
 row7 = html.Div(
     [
-        
-        dbc.Row(html.P('')),
         dbc.Row(
             [
                 dbc.Col(html.Div(card7),
@@ -403,7 +380,6 @@ row7 = html.Div(
                 
                 
             ],
-            #style={'margin': 'auto', 'width': '100vw'},
         ),
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
