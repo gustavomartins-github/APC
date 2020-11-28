@@ -536,5 +536,5 @@ def update_grafico_mulheres_mais_escutadas(my_dropdown4, my_radio_items2):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 

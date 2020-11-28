@@ -16,14 +16,14 @@ def all_paths(lista_de_paths, numero_do_path):
 
 
 
-paths= ["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx",
+paths =['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
         ]
     
         
@@ -78,7 +78,7 @@ def grafico_apps():
 
     fig1.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Número de Downloads por aplicativo nos últimos 3 meses:',  # Título do gráfico
-        height= 400,
+        height= 450,
         xaxis_title='Aplicativos',   # Título do eixo 'x'
         yaxis_title='Downloads',     # Título do eixo 'y'
     )
@@ -102,7 +102,7 @@ def grafico_apps():
 
     fig2.update_layout(   # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Tempo de uso médio em segundos por aplicativo nos últimos 3 meses:',  # Título do gráfico
-        height= 400,
+        height= 450,
         xaxis_title='Aplicativos',   # Título do eixo 'x'
         yaxis_title='Tempo de uso médio por usuário em segundos',     # Título do eixo 'y'
     )
@@ -221,7 +221,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig1.update_layout(
         title_text="Músicas mais visualizadas em 2017:",
-        height=400,
+        height=450,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
         )
@@ -244,7 +244,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig2.update_layout(
         title_text="Músicas mais visualizadas em 2018:",
-        height=400,
+        height=450,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
         )
@@ -267,7 +267,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina. 
     fig3.update_layout(
         title_text="Músicas mais visualizadas em 2019:",
-        height=400,
+        height=450,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
         )
@@ -290,7 +290,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig4.update_layout(
         title_text="Músicas mais visualizadas em 2020:",
-        height=400,
+        height=450,
         xaxis_title = 'Músicas',
         yaxis_title = 'Número de Visualizações',
         )
@@ -314,7 +314,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig5.update_layout(
         title_text="Artistas mais escutados em 2017:",
-        height=400,
+        height=450,
         xaxis_title = 'Artista',
         yaxis_title = 'Posição',
         )
@@ -337,7 +337,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig6.update_layout(
         title_text="Artistas mais escutados em 2018:",
-        height=400,
+        height=450,
         xaxis_title = 'Artista',
         yaxis_title = 'Posição',
         )
@@ -360,7 +360,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig7.update_layout(
         title_text="Artistas mais escutados em 2019:",
-        height=400,
+        height=450,
         xaxis_title = 'Artista',
         yaxis_title = 'Posição',
         )
@@ -383,7 +383,7 @@ def grafico_artistas_mais_ouvidos():
     # Aqui adicionamos os componentes do layout da pagina.
     fig8.update_layout(
         title_text="Artistas mais escutados em 2020:",
-        height=400,
+        height=450,
         xaxis_title = 'Artista',
         yaxis_title = 'Posição',
         )
@@ -443,7 +443,7 @@ def grafico_artistas_mais_relevantes():
     
     # Atualiza o layout da página
     fig.update_layout(
-    height = 500,
+    height = 600,
     xaxis_title = "Artistas",               # Muda o título do eixo x
     yaxis_title = "Posição no ranking",     # Muda o título do eixo y
     xaxis=dict(                             # Altera as propriedades do eixo x
@@ -507,12 +507,12 @@ def grafico_generos_mais_ouvidos():
 
     fig.update_layout(     # Componentes do layout da página (Título, título dos eixos e botões)
         title_text='Gêneros musicais mais escutados por ano:',  # Título do gráfico
-        height = 400,
+        height = 470,
         updatemenus=[       # Adiciona botões no layout
             dict(
                 type="buttons",
                 direction="right",      # Posição dos botões na página
-                x=0.93,                  # Muda a posição dos botões horizontalmente
+                x=0.83,                  # Muda a posição dos botões horizontalmente
                 y=1.1,                  # Muda a posição dos botões verticalmente
                 showactive=True,        # Mostra qual botão está ativo
                 buttons=list(
@@ -587,7 +587,7 @@ def grafico_lives_artistas_mais_escutados():
     fig.update_layout(                          # Componentes do layout da página (Título, título dos eixos e botões)
         #plot_bgcolor='rgb(255, 179, 179)',      # Cor do fundo da página
         title_text='Lives mais visualizadas por artista:',  # Título do gráfico
-        #height=700,
+        height=500,
         xaxis_title='Artistas',                             # Título do eixo 'x'
         yaxis_title='Visualização',                         # Título do eixo 'y'
     )
@@ -672,7 +672,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Estilo Musical',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives mais visualizadas por estilo musical:",   # Título do gráfico
         
     )
@@ -698,7 +698,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives de setanejo mais visualizadas:",   # Título do gráfico
         
     )
@@ -724,7 +724,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives de pagode mais visualizadas:",   # Título do gráfico
         
     )
@@ -750,7 +750,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives de forró mais visualizadas:",   # Título do gráfico
         
     )
@@ -776,7 +776,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives de funk mais visualizadas:",   # Título do gráfico
         
     )
@@ -802,7 +802,7 @@ def grafico_lives_estilos_mais_escutados():
 
         yaxis_title='Visualização',                                 # Título do eixo 'y'
         xaxis_title='Artista',                                      # Título do eixo 'x'
-        height=400, 
+        height=450, 
         title_text="Lives de MPB mais visualizadas:",   # Título do gráfico
         
     )
@@ -896,7 +896,7 @@ def grafico_mulheres_mais_escutadas():
     fig1.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig2 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2019:")
@@ -913,7 +913,7 @@ def grafico_mulheres_mais_escutadas():
     fig2.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig3 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2018:")
@@ -930,7 +930,7 @@ def grafico_mulheres_mais_escutadas():
     fig3.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig4 = go.Figure(layout_title_text="Artistas Femininas Mais Escutadas em 2017:")
@@ -947,7 +947,7 @@ def grafico_mulheres_mais_escutadas():
     fig4.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Visualizações",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig5 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2020:")
@@ -964,7 +964,7 @@ def grafico_mulheres_mais_escutadas():
     fig5.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Posição",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig6 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2019:")
@@ -981,7 +981,7 @@ def grafico_mulheres_mais_escutadas():
     fig6.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Posição",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig7 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2018:")
@@ -998,7 +998,7 @@ def grafico_mulheres_mais_escutadas():
     fig7.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Posição",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
 
     fig8 = go.Figure(layout_title_text="Ranking De Artistas Femininas Mais Escutadas em 2017:")
@@ -1015,7 +1015,7 @@ def grafico_mulheres_mais_escutadas():
     fig8.update_layout(
         xaxis_title= "Cantoras",        # Adiciona um título ao eixo x
         yaxis_title= "Posição",    # Adiciona um título ao eixo y
-        height = 400
+        height = 450
     )
     return [fig1,fig2,fig3,fig4,fig5,fig6,fig7,fig8]
 
