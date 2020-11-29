@@ -427,7 +427,7 @@ row8 = html.Div(
     ],style={'backgroundColor':'rgb(3, 16, 33)'}
 )
 
-app.layout = html.Div([row0, row1, row2, row3, row4, row5, row6, row7, row8])
+app.layout = html.Div([row0, row1, row2, row7, row4, row5, row6, row3, row8])
 
 
 @app.callback(

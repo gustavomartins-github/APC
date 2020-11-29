@@ -15,18 +15,16 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-
-paths =['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
-        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
+paths =["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
+        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx",
         ]
     
-        
 
 def seleciona_colunas(matriz_de_dados, número_da_coluna):
     
@@ -391,7 +389,6 @@ def grafico_artistas_mais_ouvidos():
     return [fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8]
 
 
-
 def grafico_artistas_mais_relevantes():
 
     # A variável path armazena o local do arquivo no computador. Cada computador tem um local diferente, fique atento para o local no seu PC!
@@ -461,7 +458,6 @@ def grafico_artistas_mais_relevantes():
     
               
     return fig
-
 
 
 def grafico_generos_mais_ouvidos():
@@ -545,7 +541,6 @@ def grafico_generos_mais_ouvidos():
     return fig
 
 
-
 def grafico_lives_artistas_mais_escutados():
 
     # Especifica o caminho do computador até a planilha do gráfico
@@ -593,7 +588,6 @@ def grafico_lives_artistas_mais_escutados():
     )
 
     return fig
-
 
 
 def grafico_lives_estilos_mais_escutados():
@@ -810,7 +804,6 @@ def grafico_lives_estilos_mais_escutados():
 
 
     return [fig1,fig2,fig3,fig4,fig5,fig6]
-
 
 
 def grafico_mulheres_mais_escutadas():
