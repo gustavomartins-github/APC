@@ -15,14 +15,14 @@ def all_paths(lista_de_paths, numero_do_path):
     return lista_de_paths[numero_do_path]
 
 
-paths =["/home/yan/Documents/APC/DashMusic-local/Dash/grafico_apps_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx",
-        "/home/yan/Documents/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx",
+paths =['C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_apps_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_artistas_mais_relevantes_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_generos_mais_ouvidos_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_artistas_mais_escutados_data.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data1.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_lives_estilos_mais_escutados_data2.xlsx',
+        'C:/Users/geral/OneDrive/Área de Trabalho/APC/DashMusic-local/Dash/grafico_mulheres_mais_escutadas_data.xlsx'
         ]
     
 
@@ -502,7 +502,7 @@ def grafico_generos_mais_ouvidos():
     )
 
     fig.update_layout(     # Componentes do layout da página (Título, título dos eixos e botões)
-        title_text='Gêneros musicais mais escutados por ano:',  # Título do gráfico
+        title_text='Gêneros musicais mais escutados em 2018:',  # Título do gráfico
         height = 470,
         updatemenus=[       # Adiciona botões no layout
             dict(
@@ -517,19 +517,19 @@ def grafico_generos_mais_ouvidos():
                             label="2018",      # Título do botão
                             method="update",                            
                             args=[{"values": [porcentagem2018],   # Argumentos e dados a serem alterados
-                                "labels": [genero2018]}],
+                                "labels": [genero2018]},{'title':'Gêneros musicais mais escutados em 2018:'}],
                         ),
                         dict(
                             label="2019",
                             method="update",
                             args=[{"values": [porcentagem2019],
-                                "labels": [genero2019]}],
+                                "labels": [genero2019]}, {'title':'Gêneros musicais mais escutados em 2019:'}],
                         ),
                         dict(
                             label="2020",
                             method="update",
                             args=[{"values": [porcentagem2020],
-                                "labels": [genero2020]}],
+                                "labels": [genero2020]}, {'title':'Gêneros musicais mais escutados em 2020:'}],
                         )
                     ]
                 ),
