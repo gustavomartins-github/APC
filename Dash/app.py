@@ -73,12 +73,12 @@ card2 = dbc.Card(
                 dcc.Dropdown(
                     id = 'my_dropdown2',
                     options = [
-                        {'label': "2017", "value": 'views1'},
-                        {'label': "2018", "value": 'views2'},
-                        {'label': '2019', 'value': 'views3'}, 
-                        {'label': '2020', 'value': 'views4'}
+                        {'label': "2017", "value": 'drop_2_2017'},
+                        {'label': "2018", "value": 'drop_2_2018'},
+                        {'label': '2019', 'value': 'drop_2_2019'}, 
+                        {'label': '2020', 'value': 'drop_2_2020'}
                     ],
-                    value = 'views1',
+                    value = 'drop_2_2017',
                     multi = False,
                     clearable = False,
             )
@@ -89,10 +89,10 @@ card2 = dbc.Card(
                 dcc.RadioItems(
                     id = 'my_radio_items',
                     options=[
-                        {'label': 'Visualizações', 'value': 'botão_views'},
-                        {'label': 'Ranking por artista', 'value': 'botão_ranking'}
+                        {'label': 'Visualizações', 'value': 'radio_views'},
+                        {'label': 'Ranking por artista', 'value': 'radio_ranking'}
                     ],
-                    value='botão_views',
+                    value='radio_views',
                     inputStyle={"margin-right": "2px"},
                     labelStyle={'display':"block"}
             )
@@ -207,12 +207,12 @@ card7 = dbc.Card(
                 dcc.Dropdown(
                     id = 'my_dropdown4',
                     options = [
-                        {'label': "2017", "value": 'visu1'},
-                        {'label': "2018", "value": 'visu2'},
-                        {'label': '2019', 'value': 'visu3'}, 
-                        {'label': '2020', 'value': 'visu4'}
+                        {'label': "2017", "value": 'drop_4_2017'},
+                        {'label': "2018", "value": 'drop_4_2018'},
+                        {'label': '2019', 'value': 'drop_4_2019'}, 
+                        {'label': '2020', 'value': 'drop_4_2020'}
                     ],
-                    value = 'visu1',
+                    value = 'drop_4_2017',
                     multi = False,
                     clearable = False,
             )
@@ -224,12 +224,12 @@ card7 = dbc.Card(
                 dcc.RadioItems(
                     id = 'my_radio_items2',
                     options=[
-                        {'label': 'Visualizações', 'value': 'botão_visu'},
-                        {'label': 'Ranking por artista', 'value': 'ranking'}
+                        {'label': 'Visualizações', 'value': 'radio_2_views'},
+                        {'label': 'Ranking por artista', 'value': 'radio_2_ranking'}
                     ],
+                    value='radio_2_views',
                     labelStyle={'display': 'block'},
-                    inputStyle={"margin-right": "2px"},
-                    value='botão_visu',
+                    inputStyle={"margin-right": "2px"},                    
             )
             ],
             style={'marginTop': 5}),
@@ -285,7 +285,7 @@ card8 = dbc.Card(
 
 
 
-# A partir daqui temos as rows
+# A partir daqui temos as rows(linhas do bootstrap - layout do bootstrap)
 row0 = html.Div(
     [
         dbc.Row(
@@ -476,26 +476,26 @@ def update_grafico_lives_estilos_mais_escutados(my_dropdown3):
     [Input('my_dropdown2', 'value'), Input('my_radio_items', 'value')]
     )
 def update_grafico_artistas_mais_ouvidos(my_dropdown2, my_radio_items):
-    if my_dropdown2 == 'views1':
-        if my_radio_items == 'botão_views':
+    if my_dropdown2 == 'drop_2_2017':
+        if my_radio_items == 'radio_views':
             return figs_grafico_artistas_mais_ouvidos[0]
         else: 
             return figs_grafico_artistas_mais_ouvidos[4]
 
-    if my_dropdown2 == 'views2':
-        if my_radio_items == 'botão_views':
+    if my_dropdown2 == 'drop_2_2018':
+        if my_radio_items == 'radio_views':
             return figs_grafico_artistas_mais_ouvidos[1]
         else: 
             return figs_grafico_artistas_mais_ouvidos[5]
 
-    if my_dropdown2 == 'views3':
-        if my_radio_items == 'botão_views':
+    if my_dropdown2 == 'drop_2_2019':
+        if my_radio_items == 'radio_views':
             return figs_grafico_artistas_mais_ouvidos[2]
         else: 
             return figs_grafico_artistas_mais_ouvidos[6]
     
-    if my_dropdown2 == 'views4':
-        if my_radio_items == 'botão_views':
+    if my_dropdown2 == 'drop_2_2020':
+        if my_radio_items == 'radio_views':
             return figs_grafico_artistas_mais_ouvidos[3]
         else: 
             return figs_grafico_artistas_mais_ouvidos[7]
@@ -509,26 +509,26 @@ def update_grafico_artistas_mais_ouvidos(my_dropdown2, my_radio_items):
     [Input('my_dropdown4', 'value'), Input('my_radio_items2', 'value')]
     )
 def update_grafico_mulheres_mais_escutadas(my_dropdown4, my_radio_items2):
-    if my_dropdown4 == 'visu1':
-        if my_radio_items2 == 'botão_visu':
+    if my_dropdown4 == 'drop_4_2017':
+        if my_radio_items2 == 'radio_2_views':
             return figs_grafico_mulheres_mais_escutadas[3]
         else: 
             return figs_grafico_mulheres_mais_escutadas[7]
 
-    if my_dropdown4 == 'visu2':
-        if my_radio_items2 == 'botão_visu':
+    if my_dropdown4 == 'drop_4_2018':
+        if my_radio_items2 == 'radio_2_views':
             return figs_grafico_mulheres_mais_escutadas[2]
         else: 
             return figs_grafico_mulheres_mais_escutadas[6]
 
-    if my_dropdown4 == 'visu3':
-        if my_radio_items2 == 'botão_visu':
+    if my_dropdown4 == 'drop_4_2019':
+        if my_radio_items2 == 'radio_2_views':
             return figs_grafico_mulheres_mais_escutadas[1]
         else: 
             return figs_grafico_mulheres_mais_escutadas[5]
     
-    if my_dropdown4 == 'visu4':
-        if my_radio_items2 == 'botão_visu':
+    if my_dropdown4 == 'drop_4_2020':
+        if my_radio_items2 == 'radio_2_views':
             return figs_grafico_mulheres_mais_escutadas[0]
         else: 
             return figs_grafico_mulheres_mais_escutadas[4]
